@@ -107,6 +107,8 @@ input.reg-input-submit:hover {
   transition: background-color 300ms;
 }
 
+/* responsive */
+
 @media screen and (max-width:750px) {
   form.reg-form {
     width: 75%;
