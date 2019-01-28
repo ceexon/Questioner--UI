@@ -60,7 +60,7 @@ Hosting link
     git clone https://github.com/kburudi/the-Questioner
 ```
 
-- cd into "the-Questioner"
+- cd into "Questioner-UI"
 - open index.html on your browser
 - try all other links and navigations
 
