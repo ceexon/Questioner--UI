@@ -1,0 +1,132 @@
+header.main-body-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #3877ea;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.main-title {
+  vertical-align: middle;
+  padding: 12px 0px 10px 8px;
+}
+
+a.main-title-text {
+  color: #ffffff;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+div.navbar-holder {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin-top: 13px;
+}
+
+div.main-nav-items {
+  padding: 10px 15px;
+}
+
+a.main-nav-links {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+a.main-nav-links:hover {
+  color: #f2f3fa;
+}
+
+section.reg-form-box {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+form.reg-form {
+  width: 50%;
+  margin: auto;
+  border: 1px solid #25509e;
+  padding: 12px 0;
+  border-radius: 8px;
+}
+
+h3.join-now {
+  text-align: center;
+  font-weight: 300;
+  color: #606060;
+  word-spacing: -1px;
+  letter-spacing: -1;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+p.join-now-par {
+  text-align: center;
+  word-spacing: 3px;
+  color: #25509e;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+span.fa-smile {
+  font-size: 2em;
+}
+
+div.field-boxes {
+  width: 90%;
+  margin: auto;
+  padding: 8px;
+}
+
+input.reg-input-fields {
+  width: 90%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #3877ea;
+  outline: none;
+}
+
+input.reg-input-submit {
+  padding: 10px;
+  font-size: 1.3em;
+  color: #fff;
+  background-color: #25509e;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 200px;
+  cursor: pointer;
+}
+
+input.reg-input-submit:hover {
+  background-color: #08368b;
+  transition: background-color 300ms;
+}
+
+/* responsive */
+
+@media screen and (max-width:750px) {
+  form.reg-form {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width:550px) {
+  section.reg-form-box {
+    padding: 8px;
+  }
+
+  form.reg-form {
+    width: 90%;
+    padding: 8px;
+  }
+
+  div.main-nav-items {
+    padding: 10px 8px;
+  }
+
+}
