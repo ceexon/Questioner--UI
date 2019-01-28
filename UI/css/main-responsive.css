@@ -1,0 +1,66 @@
+@media screen and (max-width: 850px) {
+  div.about-divs {
+    flex-basis: 40%;
+    margin-top: 30px;
+  }
+
+  div.meetup-box-rep {
+    width: 45%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  div.footer-left,
+  div.footer-right {
+    flex-basis: 80%;
+    text-align: center;
+  }
+
+  div.footer-right {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  div.about-divs {
+    flex-basis: 60%;
+  }
+
+  div.about-divs:first-of-type {
+    margin-top: 0px;
+  }
+
+  div.meetup-box-rep {
+    width: 80%;
+  }
+
+  div.socials {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  div.form-elements {
+    padding: 10px 0;
+  }
+
+  input.email-input,
+  textarea.main-response-field {
+    width: 94%;
+  }
+
+  footer.main-footer {
+    padding: 20px 5px;
+  }
+
+  div.footer-left,
+  div.footer-right {
+    flex-basis: 90%;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+}

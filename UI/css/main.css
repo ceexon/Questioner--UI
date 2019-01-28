@@ -1,0 +1,280 @@
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  background-color: #ffffffff;
+  overflow-x: hidden;
+}
+
+body,
+* {
+  vertical-align: middle;
+}
+
+/* Header section */
+header.main-header {
+  width: 100%;
+  height: 450px;
+  padding: 0 20px;
+  margin: 0;
+  box-sizing: content-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/mainpage/man-2814938_1280.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #f6f6f6;
+  font-style: italic;
+}
+
+h1.questioner-name {
+  font-size: 3em;
+  margin-top: 200px;
+  padding: 0;
+}
+
+h1.questioner-name,
+p.description-question {
+  text-align: center;
+  margin-left: -25px;
+}
+
+div.sign-now {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+div.sign-box {
+  text-align: center;
+  margin-right: 50px;
+}
+
+div.sign-box:last-child {
+  margin-right: 0;
+}
+
+a.sign-button {
+  background: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.692);
+  padding: 8px 26px;
+  font-size: 20px;
+  font-weight: 500;
+  outline: none;
+  text-decoration: none;
+}
+
+a.sign-button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.281);
+  border: 1px solid rgba(255, 255, 255, 0.692);
+}
+
+/* About section */
+section.about-questioner {
+  padding: 30px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  flex-grow: 1;
+  color: #606660;
+}
+
+div.about-divs {
+  flex-basis: 18%;
+  text-align: justify;
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+h3.about-title {
+  align-self: stretch;
+  top: 0;
+  position: absolute;
+  width: 90vw;
+  text-align: center;
+  font-weight: 200;
+}
+
+span.top-desc-text {
+  padding-bottom: 8px;
+  display: inline-block;
+  font-weight: 300;
+}
+
+span.fa-smile-wink {
+  color: #b4acac;
+  font-size: 2em;
+}
+
+/* upcoming meetup section */
+section.upcoming-events {
+  padding: 20px;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+}
+
+h1.upcoming-title {
+  font-weight: 200;
+  text-align: center;
+}
+
+div.all-meetups-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  width: 100%;
+}
+
+div.meetup-box-rep {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #f3f4f5;
+  padding: 15px 0;
+  border-radius: 5px;
+  box-shadow: 2px 4px 4px #66666611;
+}
+
+div.meetup-image-box {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  flex-grow: 1;
+}
+
+img.meetup-image {
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+}
+
+div.read-more-line {
+  text-align: right;
+  width: 80%;
+  margin: auto;
+  margin-right: 60px;
+}
+
+a.read-more {
+  text-decoration: none;
+  color: #1e62b9;
+}
+
+a.read-more:hover {
+  text-decoration: underline;
+  color: #0036e6;
+}
+
+p.text-desc-part {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+/* main footer */
+footer.main-footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #3877ea;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+div.footer-left,
+div.footer-right {
+  flex-basis: 40%;
+  text-align: center;
+}
+
+div.response-head {
+  color: #fff;
+}
+
+form.response-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.form-elements {
+  width: 100%;
+  padding: 10px;
+}
+
+input.email-input,
+textarea.main-response-field {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+input.feedback-btn {
+  width: 60%;
+  margin: auto;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+div.socials {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  flex-direction: row;
+}
+
+div.footer-links {
+  margin-top: 10px;
+}
+
+div.footer-links a.read-more {
+  color: #fff;
+}
+
+div.sponser-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+div.sponsers {
+  display: flex;
+}
+
+img.sp-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}

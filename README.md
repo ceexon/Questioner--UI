@@ -57,7 +57,7 @@ Hosting link
 - clone the repo
 
 ```
-   `` git clone https://github.com/kburudi/the-Questioner ``
+    git clone https://github.com/kburudi/the-Questioner
 ```
 
 - cd into "the-Questioner"
