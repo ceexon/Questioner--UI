@@ -316,6 +316,12 @@ input.create-button {
     height: 80px;
     border-radius: 50%;
   }
+
+  input.create-button {
+    font-size: 1.2em;
+    width: 160px;
+    padding: 5px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -348,5 +354,16 @@ input.create-button {
   div.the-question {
     max-width: 100%;
     width: 100%;
+  }
+
+  input.topic-input,
+  textarea.question-body-field {
+    width: 100%;
+  }
+
+  input.create-button {
+    font-size: 1.1em;
+    width: 140px;
+    padding: 5px;
   }
 }
