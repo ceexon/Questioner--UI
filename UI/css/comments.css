@@ -105,6 +105,7 @@ div.question-asked {
 div.meetup-feeds {
   display: flex;
   padding: 10px 30px;
+  flex-wrap: wrap;
 }
 
 h3.top-feeds-title {
@@ -121,8 +122,53 @@ div.bottom-bar {
 
 }
 
+a.feeds-to-questions {
+  color: #000;
+  text-decoration: none;
+}
+
+span.show-profile,
+span.hide-prof {
+  color: #204fb4;
+  font-size: 1.6em;
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  z-index: 3;
+  cursor: pointer;
+  display: none;
+}
+
+section.edit-section {
+  padding: 20px;
+  width: 100%;
+}
+
+label {
+  padding: 5px;
+  font-size: 1.3em;
+}
+
+
 @media screen and (max-width:650px) {
   div.user-comment {
     width: 85%;
+  }
+
+  span.show-profile,
+  span.hide-prof {
+    display: block;
+  }
+
+
+  section.hide-from-prof {
+    display: none;
+  }
+
+  section.show-on-prof {
+    display: block;
+    position: fixed;
+    z-index: 4;
+    background-color: #fff;
   }
 }
