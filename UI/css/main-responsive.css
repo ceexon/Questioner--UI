@@ -60,7 +60,13 @@
     flex-basis: 90%;
     text-align: center;
     margin: 10px 0;
-    padding: 10px;
+    padding: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
+  div.socials {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
 }
