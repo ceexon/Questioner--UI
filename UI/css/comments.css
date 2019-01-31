@@ -13,8 +13,162 @@ div.user-comment {
   margin-right: 20px;
 }
 
+/* user profile */
+section.profile-body {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+section.profile-nav {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #d5d5d5;
+  border-top: none;
+  border-bottom: none;
+  padding: 15px 0;
+}
+
+div.prof-div {
+  padding: 10px 0;
+}
+
+img.prof-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+div.prof-nav-item {
+  padding: 5px 0;
+}
+
+a.prof-nav-link {
+  text-decoration: none;
+  color: #204fb4;
+}
+
+div.username {
+  color: #b46f20;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+div.user-info {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+p.circular {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #d5d5d5;
+  border-radius: 50%;
+  text-align: center;
+  padding: 15px;
+  vertical-align: middle;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 1.5em;
+
+}
+
+span.space {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+div.top-feeds {
+  width: 100%;
+}
+
+div.mini-metup-image-box {
+  padding: 8px;
+}
+
+img.mini-meetup-image {
+  width: 100px;
+  height: 100px;
+}
+
+div.question-asked {
+  padding: 8px;
+}
+
+div.meetup-feeds {
+  display: flex;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+}
+
+h3.top-feeds-title {
+  padding-left: 30px;
+  text-decoration: underline;
+  margin-bottom: -10px;
+}
+
+div.bottom-bar {
+  background-color: #204fb4;
+  width: 200px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+
+}
+
+a.feeds-to-questions {
+  color: #000;
+  text-decoration: none;
+}
+
+span.show-profile,
+span.hide-prof {
+  color: #204fb4;
+  font-size: 1.6em;
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  z-index: 3;
+  cursor: pointer;
+  display: none;
+}
+
+section.edit-section {
+  padding: 20px;
+  width: 100%;
+}
+
+label {
+  padding: 5px;
+  font-size: 1.3em;
+}
+
+
 @media screen and (max-width:650px) {
   div.user-comment {
     width: 85%;
+  }
+
+  span.show-profile,
+  span.hide-prof {
+    display: block;
+  }
+
+
+  section.hide-from-prof {
+    display: none;
+  }
+
+  section.show-on-prof {
+    display: block;
+    position: fixed;
+    z-index: 4;
+    background-color: #fff;
   }
 }

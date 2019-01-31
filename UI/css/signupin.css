@@ -3,6 +3,7 @@ header.main-body-header {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 div.main-title {
