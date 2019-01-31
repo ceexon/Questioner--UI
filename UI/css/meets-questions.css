@@ -194,12 +194,14 @@ div.user-image-name {
 }
 
 img.user-q-image {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
-span.user-name {
+span.user-name,
+span.comment-count,
+.vote-count {
   color: #606060;
   display: inline-block;
   padding: 8px 0 0 20px;
@@ -230,13 +232,18 @@ div.voting {
 }
 
 span.fa-thumbs-up,
-span.fa-thumbs-down {
+span.fa-thumbs-down,
+span.fa-comments {
   font-size: 1.5em;
   color: #05c56b;
 }
 
 span.fa-thumbs-down {
   color: #c5051f;
+}
+
+span.fa-comments {
+  color: #0d6da0;
 }
 
 div.add-new-question {
@@ -257,6 +264,11 @@ textarea.question-body-field {
   width: 90%;
   border-radius: 10px;
 
+}
+
+span.comment-count,
+.vote-count {
+  padding: 2px;
 }
 
 input.create-button {
