@@ -1,0 +1,20 @@
+section.questions-box {
+  width: 100%;
+  margin-left: 0;
+}
+
+section.comment-box {
+  width: 100%;
+  align-items: flex-end;
+}
+
+div.user-comment {
+  width: 70%;
+  margin-right: 20px;
+}
+
+@media screen and (max-width:650px) {
+  div.user-comment {
+    width: 85%;
+  }
+}
