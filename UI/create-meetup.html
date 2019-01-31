@@ -11,62 +11,65 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/main-responsive.css" />
   <link rel="stylesheet" href="css/signupin.css">
+  <link rel="stylesheet" href="css/meets-questions.css">
+  <link rel="stylesheet" href="css/comments.css">
+  <link rel="stylesheet" href="css/meetups-cre-del.css">
 </head>
 
 <body>
 
-  <header class="main-body-header">
+  <header class="main-body-header" id="header">
     <div class="main-title">
       <a href="index.html" class="main-title-text">Questioner</a>
     </div>
     <div class="menu-bar">
       <div class="navbar-holder">
         <div class="main-nav-items">
-          <a href="index.html" class="main-nav-links">Home</a>
+          <a href="index.html" class="main-nav-links sub-nav-links">Home</a>
         </div>
         <div class="main-nav-items">
-          <a href="signup.html" class="main-nav-links">Signup
+          <a href="meetups.html" class="main-nav-links sub-nav-links">Meetups</a>
+        </div>
+        <div class="main-nav-items">
+          <a href="admin-profile.html" class="main-nav-links sub-nav-links">Profile
           </a>
         </div>
         <div class="main-nav-items">
-          <a href="signin.html" class="main-nav-links">Signin
+          <a href="signin.html" class="main-nav-links sub-nav-links">Signout
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="reg-form-box">
-    <h3 class="join-now">The Questioner Community</h3>
-    <p class="join-now-par">Where we meet before the actual meetup <span class="fas fa-smile"></span></p>
-    <form action="meetups.html" class="reg-form">
+  <section class="main-content-prof" id="create-meetups">
+    <form action="#" class="create-meetup-form">
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="First Name">
+        <label for="title" class="meetup-title">Title: </label><br>
+        <input type="text" class="reg-input-fields" placeholder="Enter A Title For The Meetup" name="title">
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Last Name">
+        <label for="title" class="meetup-image-url">Image: </label><br>
+        <input type="text" class="reg-input-fields" placeholder="Enter Image Url" name="title">
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Other Name(optional)">
+        <label for="title" class="meetup-tags">Tags (optional): </label><br>
+        <input type="text" class="reg-input-fields" placeholder="Enter Meetup Tags eg. #meetup1, #meetup2" name="title">
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Pick a unique username">
+        <label for="title" class="meetup-location">Location: </label><br>
+        <input type="text" class="reg-input-fields" placeholder="Enter Meetup Venue" name="title">
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Enter a unique email">
+        <label for="title" class="meetup-time">Happen On: </label><br>
+        <input type="text" class="reg-input-fields" placeholder="Enter Meetup Happen Time (mm dd yy hr:min)" name="title">
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Enter your Phone Number">
+        <label for="meetup-desc" class="meetup-desc">Description: </label><br>
+        <textarea name="meetup-desc" class="main-response-field meetup-desc" id="" cols="30" rows="5" placeholder="A little Description"></textarea>
       </div>
       <div class="field-boxes">
-        <input type="password" class="reg-input-fields" placeholder="Enter a strong Password">
-      </div>
-      <div class="field-boxes">
-        <input type="password" class="reg-input-fields" placeholder="Please confirm your Password">
-      </div>
-
-      <div class="field-boxes">
-        <input type="submit" class="reg-input-submit" value="Register Now">
+        <input class="create-button" type="submit" value="Create Meetup" />
       </div>
     </form>
   </section>
@@ -74,7 +77,7 @@
   <footer class="main-footer">
     <div class="footer-left">
       <div class="response-head">
-        How do you think we can improve your exoerience?
+        How do you think we can improve your experience?
       </div>
       <form action="#" class="response-form">
         <div class="form-elements">
@@ -91,22 +94,22 @@
     <div class="footer-right">
       <div class="footer-breakdown socials">
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fas fa-envelope"> email</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fab fa-facebook-f"> facebook</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fab fa-instagram"> instagram</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fab fa-twitter"> twitter</span>
           </a>
         </div>
