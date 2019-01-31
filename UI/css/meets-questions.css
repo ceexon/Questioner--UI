@@ -194,8 +194,8 @@ div.user-image-name {
 }
 
 img.user-q-image {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
@@ -204,7 +204,7 @@ span.comment-count,
 .vote-count {
   color: #606060;
   display: inline-block;
-  padding: 8px 0 0 20px;
+  padding: 8px 0 0 10px;
 }
 
 div.the-question {
@@ -236,6 +236,7 @@ span.fa-thumbs-down,
 span.fa-comments {
   font-size: 1.5em;
   color: #05c56b;
+  cursor: pointer;
 }
 
 span.fa-thumbs-down {
@@ -323,12 +324,6 @@ input.create-button {
     width: 130px;
   }
 
-  img.user-q-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-
   input.create-button {
     font-size: 1.2em;
     width: 160px;
@@ -337,10 +332,6 @@ input.create-button {
 }
 
 @media screen and (max-width: 400px) {
-  img.user-q-image {
-    display: none;
-  }
-
 
   span.user-name {
     color: #606060;
