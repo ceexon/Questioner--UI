@@ -41,15 +41,40 @@
     </div>
   </header>
 
+  <span class="show-profile fas fa-bars"></span>
+  <script>
+    document.addEventListener('DOMContentLoaded',
+  function () {
+    var showProf = document.querySelector('span.fas.fa-bars')
+    var profile = document.querySelector('section.profile-nav')
+    showProf.addEventListener('click', function (e) {
+      e.preventDefault()
+      profile.classList.remove("hide-from-prof")
+      profile.classList.add("show-on-prof")
+      this.style.display = "none"
+    })
+
+    var hideProf = document.querySelector("span.fa-times")
+    hideProf.addEventListener('click', function (e) {
+      e.preventDefault()
+      profile.classList.add("hide-from-prof")
+      profile.classList.remove("show-on-prof")
+      showProf.style.display = "block"
+    })
+
+  })
+  </script>
+
   <section class="profile-body">
-    <section class="profile-nav">
+    <section class="profile-nav hide-from-prof">
+      <span class="fas fa-times hide-prof"></span>
       <div class="username prof-div">zonecc69</div>
       <div class="user-image prof-div">
         <img src="images/user-icons/boy-user-1.png" alt="profile image" class="prof-image">
       </div>
       <div class="profile-sub-nav prof-div">
         <div class="prof-nav-item">
-          <a href="#" class="prof-nav-link"><span class="fas fa-pen"></span> edit profile</a>
+          <a href="user-profile-reset.html" class="prof-nav-link"><span class="fas fa-pen"></span> edit profile</a>
         </div>
         <div class="prof-nav-item">
           <a href="#stats" class="prof-nav-link"><span class="fas fa-chart-bar"></span> my stats</a>
@@ -84,42 +109,42 @@
         <h3 class="top-feeds-title" id="tops">
           Upcoming Top Meetup Feeds
         </h3>
-        <div class="meetup-feeds">
-          <div class="mini-metup-image-box">
-            <img src="images/meetups/meetup-types/ux/user-exp.jpg" alt="Image" class="mini-meetup-image">
+        <a href="questions.html" class="feeds-to-questions">
+          <div class="meetup-feeds">
+            <div class="question-asked">
+              <p class="question-title">User Experience Design
+              </p>
+              <p class="question-body">
+                Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this
+                way.
+              </p>
+            </div>
           </div>
-          <div class="question-asked">
-            <p class="question-title">User Experience
-            </p>
-            <p class="question-body">
-              Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this way.
-            </p>
+        </a>
+        <a href="questions.html" class="feeds-to-questions">
+          <div class="meetup-feeds">
+            <div class="question-asked">
+              <p class="question-title">User Experience Design
+              </p>
+              <p class="question-body">
+                Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this
+                way.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="meetup-feeds">
-          <div class="mini-metup-image-box">
-            <img src="images/meetups/meetup-types/ux/user-exp.jpg" alt="Image" class="mini-meetup-image">
+        </a>
+        <a href="questions.html" class="feeds-to-questions">
+          <div class="meetup-feeds">
+            <div class="question-asked">
+              <p class="question-title">User Experience Design
+              </p>
+              <p class="question-body">
+                Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this
+                way.
+              </p>
+            </div>
           </div>
-          <div class="question-asked">
-            <p class="question-title">User Experience
-            </p>
-            <p class="question-body">
-              Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this way.
-            </p>
-          </div>
-        </div>
-        <div class="meetup-feeds">
-          <div class="mini-metup-image-box">
-            <img src="images/meetups/meetup-types/ux/user-exp.jpg" alt="Image" class="mini-meetup-image">
-          </div>
-          <div class="question-asked">
-            <p class="question-title">User Experience
-            </p>
-            <p class="question-body">
-              Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this way.
-            </p>
-          </div>
-        </div>
+        </a>
       </div>
     </section>
 
