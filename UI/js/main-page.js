@@ -1,10 +1,10 @@
 fetchMeetup = () => {
-  fetch("http://127.0.0.1:5000/api/v2/meetups/upcoming", {
-    method: "get",
-    header: {
-      "Content-Type": "application/json"
-    }
-  })
+  fetch("https://questioner--api.herokuapp.com/api/v2/meetups/upcoming", {
+      method: "get",
+      header: {
+        "Content-Type": "application/json"
+      }
+    })
     .then(response => response.json())
     .then(data => {
       if (data.status === 200) {
