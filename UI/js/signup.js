@@ -17,6 +17,11 @@ let checkRequired = () => {
       } else {
         error.style.display = "none"
         element.style.border = "1px solid #3877ea"
+        if (myValue.trim() === '') {
+          element.style.border = "1px solid red"
+          error.style.display = "inline-block"
+          error.textContent = "Cannot be whitespace only"
+        }
       }
     })
   });
@@ -32,6 +37,12 @@ let checkRequired = () => {
         element.style.border = "1px solid red"
         error.style.display = "inline-block"
         error.textContent = "Field is required"
+      }
+
+      if (myValue.trim() === '') {
+        element.style.border = "1px solid red"
+        error.style.display = "inline-block"
+        error.textContent = "Cannot be whitespace only"
       }
     })
 
@@ -84,7 +95,7 @@ let userSignUp = () => {
             })
           } else {
             window.setTimeout(function () {
-              location.href = "http://127.0.0.1:5500/signin.html"
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html"
             }, 1000);
           }
 

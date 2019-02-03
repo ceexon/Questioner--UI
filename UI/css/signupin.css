@@ -113,7 +113,8 @@ input.reg-input-submit:hover {
   transition: background-color 300ms;
 }
 
-p.success {
+p.success,
+.loginsuccess {
   position: fixed;
   margin: auto;
   color: #189c0c;
@@ -133,6 +134,19 @@ span.error {
   color: #d11414;
   padding-top: 5px;
   margin-left: 15px;
+}
+
+.loginsuccess {
+  height: 200px;
+  padding: 40px 0 0 20%;
+  width: 80%;
+  margin-left: 10%;
+  top: 20%;
+  display: flex;
+  background: transparent;
+  box-shadow: none;
+  font-size: 1.5em;
+  color: #25509e;
 }
 
 /* responsive */
