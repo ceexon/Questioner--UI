@@ -49,7 +49,7 @@ let userSignUp = () => {
       }
     })
     e.preventDefault()
-    fetch("http://127.0.0.1:5000/api/v2/auth/signup", {
+    fetch("https://questioner--api.herokuapp.com/api/v2/auth/signup", {
         method: "post",
         headers: {
           "Content-Type": "application/json"
