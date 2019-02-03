@@ -37,11 +37,12 @@ let checkRequired = () => {
         element.style.border = "1px solid red"
         error.style.display = "inline-block"
         error.textContent = "Field is required"
-      }
-      if (myValue.trim() === '') {
-        element.style.border = "1px solid red"
-        error.style.display = "inline-block"
-        error.textContent = "Cannot be whitespace only"
+      } else {
+        if (myValue.trim() === '') {
+          element.style.border = "1px solid red"
+          error.style.display = "inline-block"
+          error.textContent = "Cannot be whitespace only"
+        }
       }
     })
 
