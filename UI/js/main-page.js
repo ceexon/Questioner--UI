@@ -9,6 +9,7 @@ fetchMeetup = () => {
     .then(data => {
       if (data.status === 200) {
         let meetupData = data.data;
+        meetupData = meetupData.slice(0, 6)
         if (meetupData[0]) {
           meetupOne = meetupData[0];
           let meetupImageUrl = meetupOne.image[0];
