@@ -41,32 +41,63 @@
     <p class="join-now-par">Where we meet before the actual meetup <span class="fas fa-smile"></span></p>
     <form action="meetups.html" class="reg-form">
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="First Name">
+        <input type="text" class="required-field reg-input-fields" placeholder="First Name" id="fname"> <span class="required">
+          *
+        </span>
+        <br>
+        <span class="error name-error"></span>
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Last Name">
+        <input type="text" class="required-field reg-input-fields" placeholder="Last Name" id="lname"> <span class="required">
+          *
+        </span>
+        <br>
+        <span class="error name-error"></span>
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Other Name(optional)">
+        <input type="text" class="reg-input-fields" placeholder="Other Name(optional)" id="other"> <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Pick a unique username">
+        <input type="text" class="required-field reg-input-fields" placeholder="Pick a unique username" id="uname">
+        <span class="required">
+          *
+        </span> <br>
+        <span class="error uname-error"></span>
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Enter a unique email">
+        <input type="email" class="required-field reg-input-fields" placeholder="Enter a unique email" id="email">
+        <span class="required">
+          *
+        </span> <br>
+        <span class="error email-error"></span>
       </div>
       <div class="field-boxes">
-        <input type="text" class="reg-input-fields" placeholder="Enter your Phone Number">
+        <input type="text" class="required-field reg-input-fields" placeholder="Enter your Phone Number" id="phone">
+        <span class="required">
+          * </span> <br>
+        <span class="error phone-error"></span>
       </div>
       <div class="field-boxes">
-        <input type="radio" class="gender-button" name="gender" id="male"> <span class="male">Male</span>
-        <input type="radio" class="gender-button" name="gender" id="female"> <span class="female">Female</span>
+        <input type="radio" class="gender-button" name="gender" value="male" checked> <span class="male">Male</span>
+        <input type="radio" class="gender-button" name="gender" value="female"> <span class="female">Female</span>
+        <span class="required"> * </span>
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
-        <input type="password" class="reg-input-fields" placeholder="Enter a strong Password">
+        <input type="password" class="required-field reg-input-fields" placeholder="Enter a strong Password" id="password">
+        <span class="required">
+          * </span>
+        <br>
+        <span class="error pass-error"></span>
       </div>
       <div class="field-boxes">
-        <input type="password" class="reg-input-fields" placeholder="Please confirm your Password">
+        <input type="password" class="required-field reg-input-fields" placeholder="Please confirm your Password" id="cpassword">
+        <span class="required">
+          * </span>
+        <br>
+        <span class="error cpass-error"></span>
       </div>
 
       <div class="field-boxes">
@@ -128,6 +159,7 @@
       </div>
     </div>
   </footer>
+  <script src="js/signup.js"></script>
 </body>
 
 </html>
