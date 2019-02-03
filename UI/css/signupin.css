@@ -103,9 +103,36 @@ input.reg-input-submit {
   cursor: pointer;
 }
 
+span.required {
+  color: #d11414;
+  display: inline-block;
+}
+
 input.reg-input-submit:hover {
   background-color: #08368b;
   transition: background-color 300ms;
+}
+
+p.success {
+  position: fixed;
+  margin: auto;
+  color: #189c0c;
+  font-size: 18px;
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  box-shadow: 5px 5px 5px #606060;
+  padding-top: 15%;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+
+span.error {
+  display: none;
+  color: #d11414;
+  padding-top: 5px;
+  margin-left: 15px;
 }
 
 /* responsive */
@@ -128,6 +155,10 @@ input.reg-input-submit:hover {
 
   div.main-nav-items {
     padding: 10px 8px;
+  }
+
+  input.reg-input-fields {
+    width: 85%;
   }
 
 }
