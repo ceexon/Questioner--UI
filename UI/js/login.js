@@ -1,7 +1,6 @@
 let requiredFields = document.querySelectorAll(".reg-input-fields")
 let submitButton = document.querySelector(".reg-input-submit")
 
-console.log("   ".trim().length)
 
 let checkRequired = () => {
   requiredFields.forEach(element => {
@@ -67,8 +66,8 @@ userLogin = () => {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         if (data.status == 200) {
+          localStorage.setItem('token', data.token);
           let loggedInSuccess = document.createElement("p");
           loggedInSuccess.classList.add("loginsuccess")
           let loginTextPar = document.createElement("p")

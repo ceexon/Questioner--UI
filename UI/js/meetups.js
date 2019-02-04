@@ -131,8 +131,6 @@ fetchMeetup = () => {
             })
             .then(response => response.json())
             .then(data => {
-              console.log(data)
-
               function ChangeUrl(page, url) {
                 if (typeof (history.pushState) != "undefined") {
                   var obj = {
