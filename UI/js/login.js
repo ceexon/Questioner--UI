@@ -84,7 +84,7 @@ userLogin = () => {
           body.style.opacity = "0.7"
 
           window.setTimeout(function () {
-            location.href = "https://kburudi.github.io/Questioner-UI/UI/meetups.html"
+            location.href = "https://kburudi.github.io/Questioner-UI/UI/meetups-home.html"
           }, 1500);
         }
 
