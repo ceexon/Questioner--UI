@@ -28,7 +28,7 @@ div.dates-menu-bar {
   margin-left: 20px;
   display: flex;
   justify-content: space-evenly;
-  background-color: #0d6da0;
+  background-color: #0d40a0;
 }
 
 a.sub-nav-links {
@@ -264,6 +264,21 @@ textarea.question-body-field {
 textarea.question-body-field {
   width: 90%;
   border-radius: 10px;
+
+}
+
+div.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+div.single-tag {
+  color: #0d40a0;
+  background-color: #fefefe;
 
 }
 

@@ -10,56 +10,72 @@
   <link rel="stylesheet" href="css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/main-responsive.css" />
-  <link rel="stylesheet" href="css/signupin.css">
+  <link rel="stylesheet" href="css/signupin.css" />
+  <link rel="stylesheet" href="css/meets-questions.css" />
 </head>
 
 <body>
-
-  <header class="main-body-header">
+  <a href="#header"><span class="arrow-to-top fas fa-arrow-up" title="scroll to top"></span></a>
+  <header class="main-body-header" id="header">
     <div class="main-title">
       <a href="index.html" class="main-title-text">Questioner</a>
     </div>
     <div class="menu-bar">
       <div class="navbar-holder">
         <div class="main-nav-items">
-          <a href="index.html" class="main-nav-links">Home</a>
+          <a href="index.html" class="main-nav-links sub-nav-links">Home</a>
         </div>
         <div class="main-nav-items">
-          <a href="signup.html" class="main-nav-links">Signup
+          <a href="meetups-home.html" class="main-nav-links sub-nav-links">Meetups</a>
+        </div>
+        <div class="main-nav-items">
+          <a href="user-profile.html" class="main-nav-links sub-nav-links">Profile
           </a>
         </div>
         <div class="main-nav-items">
-          <a href="signin.html" class="main-nav-links">Signin
+          <a href="signin.html" class="main-nav-links sub-nav-links">Signout
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="reg-form-box">
-    <h3 class="join-now">Join The Questioner Community</h3>
-    <p class="join-now-par">Where we meet before the actual meetup <span class="fas fa-smile"></span></p>
-    <form action="meetups-home.html" class="reg-form">
-      <div class="field-boxes">
-        <input type="text" class="reg-input-fields username" placeholder="Enter your username">
-        <span class="required">
-          *
-        </span> <br>
-        <span class="error uname-error"></span>
-      </div>
-      <div class="field-boxes">
-        <input type="password" class="reg-input-fields password" placeholder="Enter your Password">
-        <span class="required">
-          * </span>
-        <br>
-        <span class="error pass-error"></span>
-      </div>
+  <!-- Upcoming meetups main page  -->
+  <h1 class="upcoming-title-main">Upcoming Events <br /></h1>
+
+  <div class="dates-menu-bar">
+    <div class="dates-seleclor main-nav-items">
+      <a href="#week-1" class="main-nav-links">1 Week</a>
+    </div>
+    <div class="dates-seleclor main-nav-items">
+      <a href="#weeks-2" class="main-nav-links">2 Weeks</a>
+    </div>
+    <div class="dates-seleclor main-nav-items">
+      <a href="#later" class="main-nav-links">Later</a>
+    </div>
+  </div>
 
 
-      <div class="field-boxes">
-        <input type="submit" class="reg-input-submit" value="Login Now">
-      </div>
-    </form>
+  <!-- 1 weeks -->
+  <h3 class="dates-between" id="week-1">28 Jan - 6 Feb 2019</h3>
+  <!-- A weeks time -->
+  <section class="upcoming-events upcoming-weeks-1">
+    <div class="all-meetups-box">
+    </div>
+  </section>
+
+  <!-- 2weeks -->
+  <h3 class="dates-between weeks-2" id="weeks-2">28 Jan - 6 Feb 2019</h3>
+  <!-- A weeks time -->
+  <section class="upcoming-events upcoming-weeks-2">
+    <div class="all-meetups-box">
+    </div>
+  </section> <!-- 3 weeks -->
+  <h3 class="dates-between weeks-later" id="later">28 Jan - 6 Feb 2019</h3>
+  <!-- A weeks time -->
+  <section class="upcoming-events upcoming-weeks-3">
+    <div class="all-meetups-box">
+    </div>
   </section>
 
   <footer class="main-footer">
@@ -82,22 +98,22 @@
     <div class="footer-right">
       <div class="footer-breakdown socials">
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fas fa-envelope"> email</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fab fa-facebook-f"> facebook</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fab fa-instagram"> instagram</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="#" class="read-more">
+          <a href="questions.html" class="read-more">
             <span class="fab fa-twitter"> twitter</span>
           </a>
         </div>
@@ -115,8 +131,8 @@
       </div>
     </div>
   </footer>
-
-  <script src="js/login.js"></script>
+  <script src="js/meetups.js"></script>
+  <script src="js/singlemeetup.js"></script>
 </body>
 
 </html>
