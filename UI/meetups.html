@@ -47,7 +47,7 @@
     <div class="full-desc-meetup">
       <div class="meetup-box-rep">
         <div class="in-meetup meetup-image-box">
-          <img src="images/meetups/meetup-types/ux/user-exp.jpg" class="meetup-image" />
+          <img src="" class="meetup-image" />
         </div>
         <div class="rsvp-attend">
           <div class="tags">
@@ -75,22 +75,16 @@
       </div>
       <div class="in-meetup meetup-description">
         <p class="meetup-text">
-          Are you a User Experience(UX) enthusiast? Do you want to learn
-          modern tips and tricks that meet your clients' expectation? Then
-          don't be an exception. RSVP today and be on the list of the
-          attendees of the BK UX meetup. Starts with you. Harry up, Time's not
-          on our side.
         </p>
         <div class="meet-place-time">
           <div class="Venue">
             <h4 class="venue-ttl">Venue</h4>
             <p class="venue-desc">
-              Nairobi, Kenyatta International Conference Center
             </p>
           </div>
           <div class="Time">
             <h4 class="venue-ttl">Time</h4>
-            <p class="venue-desc">Feb 8th 2019 1000 hrs</p>
+            <p class="venue-desc"></p>
           </div>
         </div>
       </div>
@@ -98,16 +92,15 @@
   </section>
 
   <section class="questions-box">
-    <div class="user-question">
+    <div class="user-question" style="display: none;">
       <div class="user-image-name">
-        <img src="images/user-icons/boy-user-1.png" alt="user-image" class="user-q-image" />
-        <span class="user-name"> zonecc69 </span>
+        <img src="" alt="user-image" class="user-q-image" />
+        <span class="user-name"> </span>
       </div>
       <div class="the-question">
-        <p class="question-title">User Experience
+        <p class="question-title">
         </p>
         <p class="question-body">
-          What do you think of interaction design and user experience? What’re the differences between the two?
         </p>
         <div class="voting">
           <div class="up-votes"><span class="fas fa-thumbs-up"> </span> <span class="vote-count up-votes-count">10</span></div>
@@ -122,62 +115,17 @@
       </div>
     </div>
 
-    <div class="user-question">
-      <div class="user-image-name">
-        <img src="images/user-icons/male-user-4.png.jpeg" alt="user-image" class="user-q-image" />
-        <span class="user-name"> sister </span>
-      </div>
-      <div class="the-question">
-        <p class="question-title">User Experience
-        </p>
-        <p class="question-body">
-          What do you think is the best things you have done in your projects? Are there any considerate or special
-          designs?
-        </p>
-        <div class="voting">
-          <div class="up-votes"><span class="fas fa-thumbs-up"> </span> <span class="vote-count up-votes-count">18</span></div>
-          <div class="down-votes">
-            <span class="fas fa-thumbs-down"> </span> <span class="vote-count down-votes-count">2</span>
-          </div>
-          <div class="comment-view-que">
-            <a href="comments.html"><span class="far fa-comments"></span></a>
-            <span class="comment-count">6</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="user-question">
-      <div class="user-image-name">
-        <img src="images/user-icons/boy-user-1.png" alt="user-image" class="user-q-image" />
-        <span class="user-name"> zonecc69 </span>
-      </div>
-      <div class="the-question">
-        <p class="question-title">User Experience
-        </p>
-        <p class="question-body">
-          Aimed at a prototype you’ve done, the interviewer picks up a point and asks why you designed it this way.
-        </p>
-        <div class="voting">
-          <div class="up-votes"><span class="fas fa-thumbs-up"> </span> <span class="vote-count up-votes-count">1</span></div>
-          <div class="down-votes">
-            <span class="fas fa-thumbs-down"> </span> <span class="vote-count down-votes-count">3</span>
-          </div>
-          <div class="comment-view-que">
-            <a href="comments.html"><span class="far fa-comments"></span></a>
-            <span class="comment-count">4</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="add-new-question">
       <form action="" class="new-question-form">
         <div class="form-elements">
-          <input type="text" class="topic-input" placeholder="Enter Your Question Title" />
+          <input type="text" class="topic-input question-input" placeholder="Enter Your Question Title" />
+          <br>
+          <span class="error"></span>
         </div>
         <div class="form-elements">
-          <textarea name="" id="" cols="30" rows="10" class="question-body-field" placeholder="Body of the question"></textarea>
+          <textarea name="" id="" cols="30" rows="10" class="question-body-field question-input" placeholder="Body of the question"></textarea>
+          <br>
+          <span class="error"></span>
         </div>
         <div class="form-elements">
           <input class="create-button" type="submit" value="Add Question" />
@@ -240,6 +188,7 @@
     </div>
   </footer>
   <script src="js/singlemeetup.js"></script>
+  <script src="js/questions.js"></script>
 </body>
 
 </html>
