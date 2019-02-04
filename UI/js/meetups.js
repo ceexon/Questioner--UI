@@ -104,15 +104,51 @@ fetchMeetup = () => {
         meetupDescription.classList.add("text-desc-part");
         meetupTextBox.appendChild(meetupDescription);
         meetupDescription.textContent = textDesc;
-        let readMore = document.createElement("a");
-        readMore.classList.add("read-more");
-        readMore.setAttribute("href", "#");
-        readMore.textContent = "read more ";
-        let readMoreArrow = document.createElement("span");
-        readMoreArrow.setAttribute("class", "fas fa-arrow-right");
-        readMore.appendChild(readMoreArrow);
-        meetupTextBox.appendChild(readMore);
-        let readMoreLine = document.querySelector(".read-more-line");
+        let meetupIdHidden = document.createElement("span");
+        meetupIdHidden.classList.add("meetup-id");
+        meetupIdHidden.textContent = meetup.id
+        meetupTextBox.appendChild(meetupIdHidden);
+        meetupIdHidden.style.display = "none";
+
+        // events to single created meetup
+        meetupBox.addEventListener("mouseover", (e) => {
+          e.preventDefault()
+          meetupBox.style.cursor = "pointer";
+          meetupBox.style.opacity = "0.7";
+        })
+        meetupBox.addEventListener("mouseout", (e) => {
+          e.preventDefault()
+          meetupBox.style.opacity = "1";
+        })
+        meetupBox.addEventListener("click", (e) => {
+          e.preventDefault()
+          let meetupId = meetup.id
+          fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
+              method: "get",
+              header: {
+                "Content-Type": "application/json"
+              }
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log(data)
+
+              function ChangeUrl(page, url) {
+                if (typeof (history.pushState) != "undefined") {
+                  var obj = {
+                    Page: page,
+                    Url: url
+                  };
+                  history.pushState(obj, obj.Page, obj.Url);
+                } else {
+                  alert("Browser does not support HTML5.");
+                }
+              }
+              window.setTimeout(function () {
+                location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`
+              }, 200);
+            })
+        })
       })
     })
 }
