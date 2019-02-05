@@ -58,14 +58,53 @@ voteQuestion = () => {
       }
       // upvote
       fetch(`https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/${theVote}`, {
-          method: "patch",
+          method: "PUT",
           headers: {
             "x-access-token": localStorage.token
+          },
+          body: {
+            "nothing": "nothing"
           }
         })
-        .then(res => res.json())
+        .then(response => {
+          const reader = response.body.getReader();
+          const stream = new ReadableStream({
+            start(controller) {
+              // The following function handles each data chunk
+              function push() {
+                // "done" is a Boolean and value a "Uint8Array"
+                reader.read().then(({
+                  done,
+                  value
+                }) => {
+                  // Is there no more data to read?
+                  if (done) {
+                    // Tell the browser that we have finished sending data
+                    controller.close();
+                    return;
+                  }
+
+                  // Get the data and send it to the browser via the controller
+                  controller.enqueue(value);
+                  push();
+                });
+              };
+
+              push();
+            }
+          });
+
+          return new Response(stream, {
+            headers: {
+              "x-access-token": localStorage.token
+            }
+          });
+        })
+        .catch(error => console.error('Error:', error))
+        .then(newres => newres.json())
         .then(data => {
-          console.log(data)
+          console.log("\n\n\n\n\n data ===> ", data)
+          console.log(data.status)
           if (data.status === 201) {
             let voted = ""
             let other = ""
@@ -84,6 +123,10 @@ voteQuestion = () => {
             }
             let currentVoteCount = btn.nextSibling
             currentVoteCount.textContent = voted
+          }
+
+          if (data.status == 403) {
+            console.log(data)
           }
 
           if (
