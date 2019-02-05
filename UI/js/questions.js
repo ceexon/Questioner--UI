@@ -1,5 +1,104 @@
 let mainQuestionBox = document.querySelector(".questions-box")
 let addQuestionBox = document.querySelector(".add-new-question")
+requiredFields = document.querySelectorAll(".question-input")
+let submitButton = document.querySelector(".create-button")
+
+let votingElements = (btn1, btn2) => {
+  let votingBox = document.createElement("div")
+  votingBox.classList.add("voting")
+  // upvote
+  let upVoteBox = document.createElement("div")
+  upVoteBox.classList.add("up-vote")
+  let voteIconUp = document.createElement("span")
+  voteIconUp.setAttribute("value", btn1)
+  voteIconUp.classList.add("fas", "vote-button", "fa-thumbs-up")
+  let voteCountUp = document.createElement("span")
+  upVoteBox.appendChild(voteIconUp)
+  upVoteBox.appendChild(voteCountUp)
+  voteCountUp.classList.add("vote-count")
+  // downvote
+  let downVoteBox = document.createElement("div")
+  downVoteBox.classList.add("down-vote")
+  let voteIconDown = document.createElement("span")
+  voteIconDown.classList.add("fas", "vote-button", "fa-thumbs-down")
+  voteIconDown.setAttribute("value", btn2)
+  let voteCountDown = document.createElement("span")
+  voteCountDown.classList.add("vote-count")
+  downVoteBox.appendChild(voteIconDown)
+  downVoteBox.appendChild(voteCountDown)
+  votingBox.appendChild(upVoteBox)
+  votingBox.appendChild(downVoteBox)
+  let commentRep = document.createElement("div")
+  commentRep.classList.add("comment-view-que")
+  let commentIcon = document.createElement("span")
+  commentIcon.classList.add("far", "fa-comments")
+  let commentCount = document.createElement("span")
+  commentCount.classList.add("comment-count")
+  commentRep.appendChild(commentIcon)
+  commentRep.appendChild(commentCount)
+  votingBox.appendChild(commentRep)
+  return (votingBox)
+}
+
+voteQuestion = () => {
+  voteButtons = document.querySelectorAll(".vote-button")
+  voteButtons.forEach((btn) => {
+    btn.nextSibling.style.fontSize = "20px"
+    btn.nextSibling.style.paddingLeft = "10px"
+    btn.addEventListener("click", (e) => {
+      e.preventDefault()
+      name = btn.getAttribute("value")
+      questionId = parseInt(name.substr(4, 2))
+      voteType = name.substr(3, 1)
+      theVote = ""
+      if (voteType === "U") {
+        theVote = "upvote"
+      } else {
+        theVote = "downvote"
+      }
+      // upvote
+      fetch(`https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/${theVote}`, {
+          method: "patch",
+          headers: {
+            "x-access-token": localStorage.token
+          }
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          if (data.status === 201) {
+            let voted = ""
+            let other = ""
+            if (voteType === "U") {
+              voted = data.voting_stats.votes_data.upvotes
+              other = data.voting_stats.votes_data.downvotes
+              let oname = "btnD" + questionId
+              let downBtn = document.querySelector(`[value=${oname}]`).nextSibling
+              downBtn.textContent = " " + other
+            } else {
+              voted = data.voting_stats.votes_data.downvotes
+              other = data.voting_stats.votes_data.upvotes
+              let oname = "btnU" + questionId
+              let upBtn = document.querySelector(`span[value=${oname}]`).nextSibling
+              upBtn.textContent = " " + other
+            }
+            let currentVoteCount = btn.nextSibling
+            currentVoteCount.textContent = voted
+          }
+
+          if (
+            data.status === 401 ||
+            data.error == "Token is invalid or expired"
+          ) {
+            window.setTimeout(function () {
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+            }, 1000);
+          }
+        })
+
+    })
+  })
+}
 
 let getQuestions = () => {
   fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/questions`, {
@@ -18,6 +117,10 @@ let getQuestions = () => {
           if (notFound) {
             mainQuestionBox.removeChild(notFound)
           }
+          let questionId = question.id
+          let button1Id = "btnU" + questionId
+          let button2Id = "btnD" + questionId
+          console.log(button1Id, button2Id)
           let askerData = question.asker
           let singleQuestionBox = document.createElement("div")
           singleQuestionBox.classList.add("user-question")
@@ -46,8 +149,10 @@ let getQuestions = () => {
           questionBody.textContent = question.body
           mainQuestionBox.appendChild(singleQuestionBox)
           mainQuestionBox.appendChild(addQuestionBox)
-        });
+          singleQuestionBox.appendChild(votingElements(button1Id, button2Id))
+        })
       }
+      voteQuestion();
       if (data.status === 404) {
         let noQuestionsAsked = document.createElement("div")
         noQuestionsAsked.classList.add("user-question", "hide-later")
@@ -62,10 +167,6 @@ let getQuestions = () => {
 }
 
 getQuestions()
-
-requiredFields = document.querySelectorAll(".question-input")
-let submitButton = document.querySelector(".create-button")
-
 
 let checkRequired = () => {
   requiredFields.forEach(element => {
@@ -114,6 +215,7 @@ let checkRequired = () => {
 }
 checkRequired()
 
+
 let postQuestion = () => {
   let titleInput = document.querySelector(".topic-input").value
   let descInput = document.querySelector(".question-body-field").value
@@ -132,6 +234,10 @@ let postQuestion = () => {
     .then(data => {
 
       if (data.status === 201) {
+        let notFound = document.querySelector(".hide-later")
+        if (notFound) {
+          mainQuestionBox.removeChild(notFound)
+        }
         let askerData = data.asker
         let singleQuestionBox = document.createElement("div")
         singleQuestionBox.classList.add("user-question")
@@ -160,6 +266,15 @@ let postQuestion = () => {
         questionBody.textContent = descInput
         mainQuestionBox.appendChild(singleQuestionBox)
         mainQuestionBox.appendChild(addQuestionBox)
+        singleQuestionBox.appendChild(votingElements())
+      }
+      if (
+        data.status === 401 ||
+        data.error == "Token is invalid or expired"
+      ) {
+        window.setTimeout(function () {
+          location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+        }, 1000);
       }
     })
 }
