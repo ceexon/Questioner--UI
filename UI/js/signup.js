@@ -160,31 +160,3 @@ let userSignUp = () => {
 }
 
 userSignUp()
-
-
-// redirect
-// if (data.status === 201) {
-//   successMessage.textContent = "User created successfully"
-//   body = document.querySelector("body")
-//   body.appendChild(successMessage)
-
-//   let thePassword = document.querySelector("#password")
-//   let confPassword = document.querySelector("#cpassword")
-//   if (thePassword.value != confPassword.value) {
-//     submitButton.addEventListener("click", e => {
-//       e.preventDefault()
-//       let cpassError = document.querySelector(".cpass-error");
-//       cpassError.textContent = "passwords do not match"
-//       cpassError.style.display = "inline-block"
-//     })
-//   } else {
-//     window.setTimeout(function () {
-//       location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html"
-//     }, 1000);
-//   }
-
-//   requiredFields.forEach(element => {
-//     let myValue = element.value;
-//     myValue.textContent = ""
-//   })
-// }
