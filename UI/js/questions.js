@@ -58,7 +58,7 @@ voteQuestion = () => {
       }
       // upvote
       fetch(`https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/${theVote}`, {
-          method: "PUT",
+          method: "PATCH",
           headers: {
             "x-access-token": localStorage.token
           },
