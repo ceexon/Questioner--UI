@@ -1,171 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Questioner</title>
+    <link
+      rel="icon"
+      href="images/icons/questioner-logo-2.png"
+      type="image/icon"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main-responsive.css" />
+    <link rel="stylesheet" href="css/signupin.css" />
+    <link rel="stylesheet" href="css/meets-questions.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Questioner</title>
-  <link rel="icon" href="images/icons/questioner-logo-2.png" type="image/icon" />
-  <link rel="stylesheet" href="css/all.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/main-responsive.css" />
-  <link rel="stylesheet" href="css/signupin.css" />
-  <link rel="stylesheet" href="css/meets-questions.css" />
-</head>
+  <body>
+    <header class="main-body-header" id="header">
+      <div class="main-title">
+        <a href="index.html" class="main-title-text">Questioner</a>
+      </div>
+      <div class="menu-bar">
+        <div class="navbar-holder">
+          <div class="main-nav-items">
+            <a href="index.html" class="main-nav-links sub-nav-links">Home</a>
+          </div>
+          <div class="main-nav-items">
+            <a href="meetupshome.html" class="main-nav-links sub-nav-links"
+              >Meetups</a
+            >
+          </div>
 
-<body>
-  <header class="main-body-header" id="header">
-    <div class="main-title">
-      <a href="index.html" class="main-title-text">Questioner</a>
-    </div>
-    <div class="menu-bar">
-      <div class="navbar-holder">
-        <div class="main-nav-items">
-          <a href="index.html" class="main-nav-links sub-nav-links">Home</a>
-        </div>
-        <div class="main-nav-items">
-          <a href="meetupshome.html" class="main-nav-links sub-nav-links">Meetups</a>
-        </div>
-
-        <div class="main-nav-items">
-          <a href="user-profile.html" class="main-nav-links sub-nav-links">Profile
-          </a>
-        </div>
-        <div class="main-nav-items">
-          <a href="signin.html" class="main-nav-links sub-nav-links">Signout
-          </a>
+          <div class="main-nav-items">
+            <a href="user-profile.html" class="main-nav-links sub-nav-links"
+              >Profile
+            </a>
+          </div>
+          <div class="main-nav-items">
+            <a href="signin.html" class="main-nav-links sub-nav-links"
+              >Signout
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="about-meetup">
-    <div>
-      <h3 class="meetup-name">Become A UX Expert</h3>
-    </div>
-    <div class="full-desc-meetup">
-      <div class="meetup-box-rep">
-        <div class="in-meetup meetup-image-box">
-          <img src="" class="meetup-image" />
+    <section class="about-meetup">
+      <div>
+        <h3 class="meetup-name">Become A UX Expert</h3>
+      </div>
+      <div class="full-desc-meetup">
+        <div class="meetup-box-rep">
+          <div class="in-meetup meetup-image-box">
+            <img src="" class="meetup-image" />
+          </div>
+          <div class="rsvp-attend">
+            <div class="tags"></div>
+            <p class="rsvp-text">Will you be attending?</p>
+            <div class="rsvp-box">
+              <div class="rsvps-icons">
+                <a href="#" class="rsvp-count rsvp" name="yes"
+                  ><span class="fas fa-check yes-attend"></span>
+                  <span class="count-number"> </span>
+                </a>
+              </div>
+              <div class="rsvps-icons">
+                <a href="#" class="rsvp-count rsvp" name="no"
+                  ><span class="fas fa-times not-attend"></span>
+                  <span class="count-number"> </span>
+                </a>
+              </div>
+              <div class="rsvps-icons">
+                <a href="#" class="rsvp-count rsvp" name="maybe"
+                  ><span class="fas fa-question not-sure-attend"></span>
+                  <span class="count-number"> </span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="rsvp-attend">
-          <div class="tags"></div>
-          <p class="rsvp-text">Will you be attending?</p>
-          <div class="rsvp-box">
-            <div class="rsvps-icons">
-              <a href="#" class="rsvp-count rsvp" name="yes"><span class="fas fa-check yes-attend"></span>
-                <span class="count-number"> </span>
-              </a>
+        <div class="in-meetup meetup-description">
+          <p class="meetup-text"></p>
+          <div class="meet-place-time">
+            <div class="Venue">
+              <h4 class="venue-ttl">Venue</h4>
+              <p class="venue-desc"></p>
             </div>
-            <div class="rsvps-icons">
-              <a href="#" class="rsvp-count rsvp" name="no"><span class="fas fa-times not-attend"></span>
-                <span class="count-number"> </span>
-              </a>
-            </div>
-            <div class="rsvps-icons">
-              <a href="#" class="rsvp-count rsvp" name="maybe"><span class="fas fa-question not-sure-attend"></span>
-                <span class="count-number"> </span>
-              </a>
+            <div class="Time">
+              <h4 class="venue-ttl">Time</h4>
+              <p class="venue-desc"></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="in-meetup meetup-description">
-        <p class="meetup-text"></p>
-        <div class="meet-place-time">
-          <div class="Venue">
-            <h4 class="venue-ttl">Venue</h4>
-            <p class="venue-desc"></p>
+    </section>
+
+    <section class="questions-box">
+      <div class="add-new-question">
+        <form action="" class="new-question-form">
+          <div class="form-elements">
+            <input
+              type="text"
+              class="topic-input question-input"
+              placeholder="Enter Your Question Title"
+            />
+            <br />
+            <span class="error"></span>
           </div>
-          <div class="Time">
-            <h4 class="venue-ttl">Time</h4>
-            <p class="venue-desc"></p>
+          <div class="form-elements">
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              class="question-body-field question-input"
+              placeholder="Body of the question"
+            ></textarea>
+            <br />
+            <span class="error"></span>
+          </div>
+          <div class="form-elements">
+            <input class="create-button" type="submit" value="Add Question" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-left">
+        <div class="response-head">
+          How do you think we can improve your experience?
+        </div>
+        <form action="#" class="response-form">
+          <div class="form-elements">
+            <input
+              type="email"
+              class="email-input"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-elements">
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              class="main-response-field"
+              placeholder="Enter your response"
+            ></textarea>
+          </div>
+          <div class="form-elements">
+            <input class="feedback-btn" type="submit" value="Send Feedback" />
+          </div>
+        </form>
+      </div>
+      <div class="footer-right">
+        <div class="footer-breakdown socials">
+          <div class="footer-links">
+            <a href="#" class="read-more">
+              <span class="fas fa-envelope"> email</span>
+            </a>
+          </div>
+          <div class="footer-links">
+            <a href="#" class="read-more">
+              <span class="fab fa-facebook-f"> facebook</span>
+            </a>
+          </div>
+          <div class="footer-links">
+            <a href="#" class="read-more">
+              <span class="fab fa-instagram"> instagram</span>
+            </a>
+          </div>
+          <div class="footer-links">
+            <a href="#" class="read-more">
+              <span class="fab fa-twitter"> twitter</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-breakdown sponser-box">
+          <div class="sponsers">
+            <img src="images/mainpage/image011.png" alt="" class="sp-image" />
+          </div>
+          <div class="sponsers">
+            <img
+              src="images/mainpage/compassionate hands for the disabled.png"
+              alt=""
+              class="sp-image"
+            />
+          </div>
+          <div class="sponsers">
+            <img
+              src="images/mainpage/question-mark-2314115_640.jpg"
+              alt=""
+              class="sp-image"
+            />
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="questions-box">
-    <div class="add-new-question">
-      <form action="" class="new-question-form">
-        <div class="form-elements">
-          <input type="text" class="topic-input question-input" placeholder="Enter Your Question Title" />
-          <br />
-          <span class="error"></span>
-        </div>
-        <div class="form-elements">
-          <textarea name="" id="" cols="30" rows="10" class="question-body-field question-input" placeholder="Body of the question"></textarea>
-          <br />
-          <span class="error"></span>
-        </div>
-        <div class="form-elements">
-          <input class="create-button" type="submit" value="Add Question" />
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <footer class="main-footer">
-    <div class="footer-left">
-      <div class="response-head">
-        How do you think we can improve your experience?
-      </div>
-      <form action="#" class="response-form">
-        <div class="form-elements">
-          <input type="email" class="email-input" placeholder="Enter your email" />
-        </div>
-        <div class="form-elements">
-          <textarea name="" id="" cols="30" rows="10" class="main-response-field" placeholder="Enter your response"></textarea>
-        </div>
-        <div class="form-elements">
-          <input class="feedback-btn" type="submit" value="Send Feedback" />
-        </div>
-      </form>
-    </div>
-    <div class="footer-right">
-      <div class="footer-breakdown socials">
-        <div class="footer-links">
-          <a href="#" class="read-more">
-            <span class="fas fa-envelope"> email</span>
-          </a>
-        </div>
-        <div class="footer-links">
-          <a href="#" class="read-more">
-            <span class="fab fa-facebook-f"> facebook</span>
-          </a>
-        </div>
-        <div class="footer-links">
-          <a href="#" class="read-more">
-            <span class="fab fa-instagram"> instagram</span>
-          </a>
-        </div>
-        <div class="footer-links">
-          <a href="#" class="read-more">
-            <span class="fab fa-twitter"> twitter</span>
-          </a>
-        </div>
-      </div>
-      <div class="footer-breakdown sponser-box">
-        <div class="sponsers">
-          <img src="images/mainpage/image011.png" alt="" class="sp-image" />
-        </div>
-        <div class="sponsers">
-          <img src="images/mainpage/compassionate hands for the disabled.png" alt="" class="sp-image" />
-        </div>
-        <div class="sponsers">
-          <img src="images/mainpage/question-mark-2314115_640.jpg" alt="" class="sp-image" />
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script>
-  </script>
-  <script src="js/singlemeetup.js"></script>
-  <script src="js/questions.js"></script>
-  <script src="js/voting.js" type="module"></script>
-
-</body>
-
+    </footer>
+    <script></script>
+    <script src="js/singlemeetup.js"></script>
+    <script src="js/questions.js"></script>
+  </body>
 </html>
