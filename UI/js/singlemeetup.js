@@ -11,7 +11,7 @@ let fadeIn = el => {
   el.style.display = "block";
   window.setTimeout(function () {
     el.style.display = "none";
-  }, 700);
+  }, 800);
 };
 
 let mainBody = document.querySelector("body");
