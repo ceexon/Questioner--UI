@@ -11,7 +11,7 @@ let fadeIn = el => {
   el.style.display = "block";
   window.setTimeout(function () {
     el.style.display = "none";
-  }, 700);
+  }, 800);
 };
 
 let mainBody = document.querySelector("body");
@@ -148,7 +148,7 @@ let meetupRsvpFetch = () => {
             fadeIn(rsvpInfo);
             mainBody.appendChild(rsvpInfo);
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/gitsignin.html";
             }, 1000);
           }
           yesCount.textContent = allRsvpCounts.YES;
