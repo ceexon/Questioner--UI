@@ -64,8 +64,8 @@ userLogin = () => {
       .then(data => {
         if (data.status == 200) {
           localStorage.setItem("token", data.token);
-          localStorage.setItem("isAdmin", data.isAdmin)
-          localStorage.setItem("currentUser", data.userId)
+          localStorage.setItem("isAdmin", data.isAdmin);
+          localStorage.setItem("currentUser", data.userId);
           let loggedInSuccess = document.createElement("p");
           loggedInSuccess.classList.add("loginsuccess");
           let loginTextPar = document.createElement("p");
@@ -84,8 +84,12 @@ userLogin = () => {
           body.style.opacity = "0.7";
 
           window.setTimeout(function () {
-            location.href = "http://127.0.0.1:5500/meetupshome.html";
-          }, 1500);
+            if (document.referrer === "http://127.0.0.1:5500/signup.html" || document.referrer === "http://127.0.0.1:5500/index.html") {
+              location.href = "http://127.0.0.1:5500/meetupshome.html";
+            } else {
+              history.back()
+            }
+          }, 1000);
         }
 
         if (data.status === 401) {
