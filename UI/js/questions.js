@@ -3,6 +3,7 @@ let addQuestionBox = document.querySelector(".add-new-question");
 requiredFields = document.querySelectorAll(".question-input");
 let submitButton = document.querySelector(".create-button");
 let message = document.createElement("p");
+const space = "padding-left: 10px; font-size: 20px;"
 message.setAttribute(
   "style",
   "width:200px; padding:20px; background-color:#f6f6f6; text-align: center; border: 1px solid #f3f3f3; position:absolute; display:none;"
@@ -63,7 +64,7 @@ voteQuestion = () => {
       }
       // upvote
       fetch(
-          `https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/${theVote}`, {
+          `http://127.0.0.1:5000/api/v2/questions/${questionId}/${theVote}`, {
             method: "PATCH",
             headers: {
               "x-access-token": localStorage.token
@@ -134,11 +135,11 @@ voteQuestion = () => {
 
           if (data.status == 403) {
             if (data.message === "you cannot vote on your question") {
-              message.style.color = "red"
-              message.textContent = "You cannot vote on your question"
-              btn.parentNode.setAttribute("style", "position: relative;")
-              fadeIn(message)
-              btn.parentNode.appendChild(message)
+              message.style.color = "red";
+              message.textContent = "You cannot vote on your question";
+              btn.parentNode.setAttribute("style", "position: relative;");
+              fadeIn(message);
+              btn.parentNode.appendChild(message);
             }
           }
 
@@ -146,13 +147,13 @@ voteQuestion = () => {
             data.status === 401 ||
             data.error == "Token is invalid or expired"
           ) {
-            message.style.color = "red"
-            message.textContent = "please login to continue"
-            btn.parentNode.setAttribute("style", "position: relative;")
-            fadeIn(message)
-            btn.parentNode.appendChild(message)
+            message.style.color = "red";
+            message.textContent = "please login to continue";
+            btn.parentNode.setAttribute("style", "position: relative;");
+            fadeIn(message);
+            btn.parentNode.appendChild(message);
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "http://127.0.0.1:5500/signin.html";
             }, 1000);
           }
         });
@@ -160,9 +161,23 @@ voteQuestion = () => {
   });
 };
 
+let goToComments = (meetup) => {
+  let commentIcons = document.querySelectorAll("span.far.fa-comments")
+  commentIcons.forEach(icon => {
+    icon.addEventListener("click", e => {
+      let voteSpan = icon.parentNode.previousSibling.childNodes[0]
+      let currentQuesId = parseInt(voteSpan.getAttribute("value").substr(4))
+      e.preventDefault()
+      window.setTimeout(function () {
+        location.href = `http://127.0.0.1:5500/comments.html?meetup=${meetup}/question=${currentQuesId}/`;
+      }, 300);
+    })
+  })
+}
+
 let getQuestions = () => {
   fetch(
-      `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/questions`, {
+      `http://127.0.0.1:5000/api/v2/meetups/${meetupId}/questions`, {
         headers: {
           "x-access-token": localStorage.token,
           "Content-Type": "application/json"
@@ -174,7 +189,7 @@ let getQuestions = () => {
     .then(data => {
       if (data.status === 200) {
         let questionData = data.questions;
-        questionData.forEach(question => {
+        questionData.forEach((question, i) => {
           let notFound = document.querySelector(".hide-later");
           if (notFound) {
             mainQuestionBox.removeChild(notFound);
@@ -211,11 +226,17 @@ let getQuestions = () => {
           mainQuestionBox.appendChild(singleQuestionBox);
           mainQuestionBox.appendChild(addQuestionBox);
           singleQuestionBox.appendChild(votingElements(button1Id, button2Id));
-          let upVote = singleQuestionBox.childNodes[2].childNodes[0].childNodes[1]
-          upVote.textContent = question.votes.upvotes
-          let downVote = singleQuestionBox.childNodes[2].childNodes[1].childNodes[1]
-          downVote.textContent = question.votes.downvotes
+          let upVote =
+            singleQuestionBox.childNodes[2].childNodes[0].childNodes[1];
+          upVote.textContent = question.votes.upvotes;
+          let downVote =
+            singleQuestionBox.childNodes[2].childNodes[1].childNodes[1];
+          downVote.textContent = question.votes.downvotes;
+          let commentCount = singleQuestionBox.childNodes[2].childNodes[2].childNodes[1];
+          commentCount.setAttribute("style", space)
+          commentCount.textContent = question.comments
         });
+        goToComments(meetupId)
       }
       voteQuestion();
       if (data.status === 404) {
@@ -286,7 +307,7 @@ let postQuestion = () => {
   let titleInput = document.querySelector(".topic-input").value;
   let descInput = document.querySelector(".question-body-field").value;
   fetch(
-      `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/questions`, {
+      `http://127.0.0.1:5000/api/v2/meetups/${meetupId}/questions`, {
         headers: {
           "x-access-token": localStorage.token,
           "Content-Type": "application/json"
@@ -334,16 +355,25 @@ let postQuestion = () => {
         mainQuestionBox.appendChild(singleQuestionBox);
         mainQuestionBox.appendChild(addQuestionBox);
         singleQuestionBox.appendChild(votingElements());
-        let upVote = singleQuestionBox.childNodes[2].childNodes[0].childNodes[1]
-        upVote.textContent = 0
-        let downVote = singleQuestionBox.childNodes[2].childNodes[1].childNodes[1]
-        downVote.textContent = 0
-
+        let upVote =
+          singleQuestionBox.childNodes[2].childNodes[0].childNodes[1];
+        upVote.textContent = 0;
+        let downVote =
+          singleQuestionBox.childNodes[2].childNodes[1].childNodes[1];
+        downVote.textContent = 0;
+        let commentCount = singleQuestionBox.childNodes[2].childNodes[2].childNodes[1];
+        commentCount.setAttribute("style", space)
+        commentCount.textContent = 0;
+        let commentBox = singleQuestionBox.childNodes[2]
+        commentBox.addEventListener("click", e => {
+          e.preventDefault()
+          commentBox.textContent = "reload to continue"
+        })
       }
       voteQuestion();
       if (data.status === 401 || data.error == "Token is invalid or expired") {
         window.setTimeout(function () {
-          location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+          location.href = "http://127.0.0.1:5500/signin.html";
         }, 1000);
       }
     });

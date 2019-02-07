@@ -7,6 +7,18 @@ rsvpInfo.setAttribute(
   "width:200px; padding:20px; background-color:#f6f6f6; text-align: center; border: 1px solid #f3f3f3; position:fixed; display:none; left: 30%; top:40%;"
 );
 
+let pageNotFound = () => {
+  let mainBody = document.querySelector("body")
+  mainBody.innerHTML = "";
+  let errorFour04 = document.createElement("div");
+  errorFour04.setAttribute(
+    "style",
+    "width: 100vw; height: 100vh; z-index: 6; background-color: #fff; font-size: 5em; color: #0d59a0; padding: 10% 0; position: fixed; top:0; bottom:0; left: 0; right: 0; text-align:center"
+  );
+  errorFour04.textContent = "Page Not Found..\n 404";
+  mainBody.appendChild(errorFour04);
+};
+
 let fadeIn = el => {
   el.style.display = "block";
   window.setTimeout(function () {
@@ -41,7 +53,7 @@ let noCount = meetupRsvpCount[1];
 let maybeCount = meetupRsvpCount[2];
 
 let singleMeetupFetch = () => {
-  fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
+  fetch(`http://127.0.0.1:5000/api/v2/meetups/${meetupId}`, {
       method: "get",
       header: {
         "Content-Type": "application/json"
@@ -57,14 +69,7 @@ let singleMeetupFetch = () => {
         data.status === 400 ||
         window.location.href.length === 1
       ) {
-        mainBody.innerHTML = "";
-        let errorFour04 = document.createElement("div");
-        errorFour04.setAttribute(
-          "style",
-          "width: 100vw; height: 100vh; z-index: 6; background-color: #fff; font-size: 5em; color: #0d59a0; padding: 10% 0; position: fixed; top:0; bottom:0; left: 0; right: 0; text-align:center"
-        );
-        errorFour04.textContent = "Page Not Found..\n 404";
-        mainBody.appendChild(errorFour04);
+        pageNotFound()
       }
 
       if (data.status === 200) {
@@ -79,13 +84,12 @@ let singleMeetupFetch = () => {
         let meetupVenue = document.querySelector(".Venue .venue-desc");
         meetupVenue.textContent = meetupData.location;
         let happenOnDate = document.querySelector(".Time .venue-desc");
-        let theHappenTime = new Date(meetupData.happen_on);
-        theHappenTime = theHappenTime.toString();
-        let firstTimeSection = theHappenTime.substr(0, 15);
-        let hourTime = theHappenTime.substr(16, 2);
-        let minutesTime = theHappenTime.substr(19, 2);
-        let displayTime =
-          firstTimeSection + " " + hourTime + minutesTime + "HRS";
+        let happenTime = new Date(meetupData.happen_on)
+        let firstDateSection = happenTime.toDateString()
+        let timeHours = happenTime.getHours().toString()
+        let timeMinutes = happenTime.getMinutes().toString()
+        let secondDateSection = timeHours + timeMinutes + "HRS"
+        let displayTime = firstDateSection + " " + secondDateSection
         happenOnDate.textContent = displayTime;
         let meetupTags = document.querySelector(".tags");
         let tags = meetupData.tags;
@@ -113,7 +117,7 @@ let meetupRsvpFetch = () => {
     rsvp.addEventListener("click", e => {
       e.preventDefault();
       userRsvp = rsvp.name;
-      fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/rsvp`, {
+      fetch(`http://127.0.0.1:5000/api/v2/meetups/${meetupId}/rsvp`, {
           headers: {
             "x-access-token": accessToken,
             "Content-Type": "application/json"
@@ -148,7 +152,7 @@ let meetupRsvpFetch = () => {
             fadeIn(rsvpInfo);
             mainBody.appendChild(rsvpInfo);
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "http://127.0.0.1:5500/signin.html";
             }, 1000);
           }
           yesCount.textContent = allRsvpCounts.YES;
