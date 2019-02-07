@@ -61,7 +61,7 @@ let userSignUp = () => {
       cpassError.style.display = "inline-block";
     } else {
       e.preventDefault();
-      fetch("http://127.0.0.1:5000/api/v2/auth/signup", {
+      fetch("https://questioner--api.herokuapp.com/api/v2/auth/signup", {
           method: "post",
           headers: {
             "Content-Type": "application/json"
@@ -80,13 +80,13 @@ let userSignUp = () => {
         .then(res => res.json())
         .then(data => {
           successMessage.textContent = "User created successfully";
-          console.log("outside");
+          ("outside");
           if (data.status === 201) {
             body = document.querySelector("body");
             body.appendChild(successMessage);
-            console.log("here");
+            ("here");
             window.setTimeout(function () {
-              location.href = "http://127.0.0.1:5500/signin.html";
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
             }, 1000);
 
             requiredFields.forEach(element => {

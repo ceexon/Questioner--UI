@@ -31,7 +31,7 @@ let fadeIn = el => {
 };
 
 let singleMeetupQuestion = () => {
-  fetch(`http://127.0.0.1:5000/api/v2/meetups/${meetupId}/questions`, {
+  fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/questions`, {
       method: "get",
       header: {
         "x-access-token": localStorage.token,
@@ -87,7 +87,7 @@ let singleMeetupQuestion = () => {
 singleMeetupQuestion()
 
 function singleQuestionComments() {
-  fetch(`http://127.0.0.1:5000/api/v2/questions/${questionId}/comments`, {
+  fetch(`https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/comments`, {
       method: "get",
       header: {
         "x-access-token": localStorage.token,
@@ -141,7 +141,7 @@ function postComment() {
     } else {
       postText.setAttribute("placeholder", "Enter your comment")
       postText.style.borderColor = "#606060"
-      fetch(`http://127.0.0.1:5000/api/v2/questions/${questionId}/comments`, {
+      fetch(`https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/comments`, {
           headers: {
             "Content-Type": "application/json",
             "x-access-token": localStorage.token
@@ -159,7 +159,7 @@ function postComment() {
             document.querySelector(".add-new-question").appendChild(message)
             fadeIn(message)
             window.setTimeout(function () {
-              location.href = "http://127.0.0.1:5500/signin.html";
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
             }, 1000);
           }
 

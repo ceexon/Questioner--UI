@@ -2,10 +2,10 @@ let mainPostSection = document.querySelector(".main-content-prof")
 let message = ""
 let pageNotFound = () => {
   if (window.location.href.split("?")[1] != "admins%20%only") {
-    console.log("got it")
+    ("got it")
     let body = document.querySelector("body")
     body.innerHTML = "page not found"
-    console.log(body)
+      (body)
   }
 }
 
@@ -72,7 +72,7 @@ let postMeetup = () => {
       } else {
         document.querySelector(".image").style.borderColor = "#3877ea"
         imageError.style.display = "none"
-        console.log(imageError)
+          (imageError)
         document.querySelector(".image").addEventListener("blur", e => {
           document.querySelector(".image").style.borderColor = "#3877ea"
           imageError.style.display = "none"
@@ -92,11 +92,11 @@ let postMeetup = () => {
       }
     })
     if (tagsToPost.length === 0) {
-      console.log(meetupTopic)
+      (meetupTopic)
       tagsToPost = ["#" + meetupTopic.split(" ")[0]]
     }
-    console.log(tagsToPost)
-    fetch(`http://127.0.0.1:5000/api/v2/meetups`, {
+    (tagsToPost)
+    fetch(`https://questioner--api.herokuapp.com/api/v2/meetups`, {
         headers: {
           "x-access-token": localStorage.token,
           "Content-Type": "application/json"
@@ -116,19 +116,14 @@ let postMeetup = () => {
         if (data.status === 401) {
           if (data.error === "Token is invalid or expired" || data.error === "Token is missing") {
             window.setTimeout(function () {
-              location.href = "http://127.0.0.1:5500/signin.html";
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
             }, 1000);
           }
-        }
-        if (data.error === "you cannot create a meetup") {
-          window.setTimeout(function () {
-            location.href = "http://127.0.0.1:5500/user-profile.html";
-          }, 1000);
         }
         if (data.status === 201) {
           document.querySelector(".create-meetup-form").reset()
           window.setTimeout(function () {
-            location.href = "http://127.0.0.1:5500/meetupshome.html";
+            location.href = "https://kburudi.github.io/Questioner-UI/UI/meetupshome.html";
           }, 1500);
         }
       })

@@ -53,7 +53,7 @@ let noCount = meetupRsvpCount[1];
 let maybeCount = meetupRsvpCount[2];
 
 let singleMeetupFetch = () => {
-  fetch(`http://127.0.0.1:5000/api/v2/meetups/${meetupId}`, {
+  fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
       method: "get",
       header: {
         "Content-Type": "application/json"
@@ -117,7 +117,7 @@ let meetupRsvpFetch = () => {
     rsvp.addEventListener("click", e => {
       e.preventDefault();
       userRsvp = rsvp.name;
-      fetch(`http://127.0.0.1:5000/api/v2/meetups/${meetupId}/rsvp`, {
+      fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/rsvp`, {
           headers: {
             "x-access-token": accessToken,
             "Content-Type": "application/json"
@@ -152,7 +152,7 @@ let meetupRsvpFetch = () => {
             fadeIn(rsvpInfo);
             mainBody.appendChild(rsvpInfo);
             window.setTimeout(function () {
-              location.href = "http://127.0.0.1:5500/signin.html";
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
             }, 1000);
           }
           yesCount.textContent = allRsvpCounts.YES;

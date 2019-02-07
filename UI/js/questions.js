@@ -64,7 +64,7 @@ voteQuestion = () => {
       }
       // upvote
       fetch(
-          `http://127.0.0.1:5000/api/v2/questions/${questionId}/${theVote}`, {
+          `https://questioner--api.herokuapp.com/api/v2/questions/${questionId}/${theVote}`, {
             method: "PATCH",
             headers: {
               "x-access-token": localStorage.token
@@ -153,7 +153,7 @@ voteQuestion = () => {
             fadeIn(message);
             btn.parentNode.appendChild(message);
             window.setTimeout(function () {
-              location.href = "http://127.0.0.1:5500/signin.html";
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
             }, 1000);
           }
         });
@@ -169,7 +169,7 @@ let goToComments = (meetup) => {
       let currentQuesId = parseInt(voteSpan.getAttribute("value").substr(4))
       e.preventDefault()
       window.setTimeout(function () {
-        location.href = `http://127.0.0.1:5500/comments.html?meetup=${meetup}/question=${currentQuesId}/`;
+        location.href = `https://kburudi.github.io/Questioner-UI/UI/comments.html?meetup=${meetup}/question=${currentQuesId}/`;
       }, 300);
     })
   })
@@ -177,7 +177,7 @@ let goToComments = (meetup) => {
 
 let getQuestions = () => {
   fetch(
-      `http://127.0.0.1:5000/api/v2/meetups/${meetupId}/questions`, {
+      `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/questions`, {
         headers: {
           "x-access-token": localStorage.token,
           "Content-Type": "application/json"
@@ -307,7 +307,7 @@ let postQuestion = () => {
   let titleInput = document.querySelector(".topic-input").value;
   let descInput = document.querySelector(".question-body-field").value;
   fetch(
-      `http://127.0.0.1:5000/api/v2/meetups/${meetupId}/questions`, {
+      `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}/questions`, {
         headers: {
           "x-access-token": localStorage.token,
           "Content-Type": "application/json"
@@ -373,7 +373,7 @@ let postQuestion = () => {
       voteQuestion();
       if (data.status === 401 || data.error == "Token is invalid or expired") {
         window.setTimeout(function () {
-          location.href = "http://127.0.0.1:5500/signin.html";
+          location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
         }, 1000);
       }
     });

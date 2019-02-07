@@ -4,7 +4,7 @@ if (createMeetupBtn !== null) {
   createMeetupBtn.addEventListener("click", e => {
     e.preventDefault()
     window.setTimeout(() => {
-      location.href = "http://127.0.0.1:5500/create-meetup.html?admins%20%only"
+      location.href = "https://kburudi.github.io/Questioner-UI/UI/create-meetup.html?admins%20%only"
     })
   })
 }
@@ -17,12 +17,12 @@ if (profileLink !== null) {
     e.preventDefault()
     if (localStorage.isAdmin === "true") {
       window.setTimeout(() => {
-          location.href = `http://127.0.0.1:5500/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
+          location.href = `https://kburudi.github.io/Questioner-UI/UI/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
         })
         ("profile")
     } else {
       window.setTimeout(() => {
-          location.href = `http://127.0.0.1:5500/user-profile.html?user&&user=${localStorage.currentUser}?`
+          location.href = `https://kburudi.github.io/Questioner-UI/UI/user-profile.html?user&&user=${localStorage.currentUser}?`
         })
         ("non admin")
     }
@@ -47,7 +47,7 @@ let userSignout = () => {
             localStorage.token = undefined;
           }
           window.setTimeout(function () {
-            location.href = "http://127.0.0.1:5500/index.html";
+            location.href = "https://kburudi.github.io/Questioner-UI/UI/index.html";
           }, 500);
         })
     })

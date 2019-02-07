@@ -1,5 +1,5 @@
 fetchMeetup = () => {
-  fetch("http://127.0.0.1:5000/api/v2/meetups/upcoming", {
+  fetch("https://questioner--api.herokuapp.com/api/v2/meetups/upcoming", {
       method: "get",
       header: {
         "Content-Type": "application/json"
@@ -67,7 +67,7 @@ fetchMeetup = () => {
           meetupBox.addEventListener("click", e => {
             e.preventDefault();
             fetch(
-                `http://127.0.0.1:5000/api/v2/meetups/${meetupId}`, {
+                `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
                   method: "get",
                   header: {
                     "Content-Type": "application/json"
@@ -77,7 +77,7 @@ fetchMeetup = () => {
               .then(response => response.json())
               .then(data => {
                 window.setTimeout(function () {
-                  location.href = `http://127.0.0.1:5500/meetups.html?id=${meetupId}`;
+                  location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`;
                 }, 200);
               });
           });

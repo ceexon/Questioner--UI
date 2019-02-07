@@ -50,7 +50,7 @@ checkRequired();
 userLogin = () => {
   submitButton.addEventListener("click", e => {
     e.preventDefault();
-    fetch("http://127.0.0.1:5000/api/v2/auth/login", {
+    fetch("https://questioner--api.herokuapp.com/api/v2/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -84,8 +84,8 @@ userLogin = () => {
           body.style.opacity = "0.7";
 
           window.setTimeout(function () {
-            if (document.referrer === "http://127.0.0.1:5500/signup.html" || document.referrer === "http://127.0.0.1:5500/index.html") {
-              location.href = "http://127.0.0.1:5500/meetupshome.html";
+            if (document.referrer === "https://kburudi.github.io/Questioner-UI/UI/signup.html" || document.referrer === "https://kburudi.github.io/Questioner-UI/UI/index.html") {
+              location.href = "https://kburudi.github.io/Questioner-UI/UI/meetupshome.html";
             } else {
               history.back()
             }
