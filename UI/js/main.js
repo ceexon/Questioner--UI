@@ -9,29 +9,6 @@ if (createMeetupBtn !== null) {
   })
 }
 
-console.log(localStorage.isAdmin)
-console.log(localStorage.currentUser)
-
-let profileLink = document.querySelector(".user-prof-link")
-console.log(profileLink)
-
-if (profileLink !== null) {
-  profileLink.addEventListener("click", e => {
-    e.preventDefault()
-    if (localStorage.isAdmin === "true") {
-      window.setTimeout(() => {
-        location.href = `http://127.0.0.1:5500/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
-      })
-      console.log("profile")
-    } else {
-      window.setTimeout(() => {
-        location.href = `http://127.0.0.1:5500/user-profile.html?user&&user=${localStorage.currentUser}?`
-      })
-      console.log("non admin")
-    }
-  })
-}
-
 let userSignout = () => {
   let signoutBtn = document.querySelector(".sign-out-btn")
   console.log(signoutBtn)
@@ -47,7 +24,10 @@ let userSignout = () => {
         .then(data => {
           console.log(data)
           if (data.status === 200) {
-
+            localStorage.token = undefined;
+            window.setTimeout(function () {
+              location.href = "http://127.0.0.1:5500/index.html";
+            }, 500);
           }
         })
     })
@@ -55,3 +35,17 @@ let userSignout = () => {
 }
 
 userSignout()
+let homeButton = document.querySelector(".home-button")
+if (localStorage.token !== "undefined") {
+  console.log(typeof (localStorage.token))
+  if (homeButton !== null) {
+    homeButton.style.visibility = "hidden"
+  }
+} else {
+  if (homeButton !== null) {
+    homeButton.style.visibility = "visible"
+  }
+}
+
+console.log(history)
+console.log(document.referrer)
