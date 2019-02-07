@@ -199,3 +199,8 @@ function postComment() {
 }
 
 postComment()
+
+document.querySelector(".back-to-questions").addEventListener("click", e => {
+  e.preventDefault()
+  history.back()
+})
