@@ -1,3 +1,11 @@
+span.back-to-questions {
+  color: #204fb4;
+  display: block;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 1.5em;
+}
+
 section.questions-box {
   width: 100%;
   margin-left: 0;
