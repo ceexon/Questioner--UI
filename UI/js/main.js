@@ -9,6 +9,26 @@ if (createMeetupBtn !== null) {
   })
 }
 
+let profileLink = document.querySelector(".user-prof-link")
+console.log(profileLink)
+
+if (profileLink !== null) {
+  profileLink.addEventListener("click", e => {
+    e.preventDefault()
+    if (localStorage.isAdmin === "true") {
+      window.setTimeout(() => {
+        location.href = `http://127.0.0.1:5500/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
+      })
+      console.log("profile")
+    } else {
+      window.setTimeout(() => {
+        location.href = `http://127.0.0.1:5500/user-profile.html?user&&user=${localStorage.currentUser}?`
+      })
+      console.log("non admin")
+    }
+  })
+}
+
 let userSignout = () => {
   let signoutBtn = document.querySelector(".sign-out-btn")
   console.log(signoutBtn)
