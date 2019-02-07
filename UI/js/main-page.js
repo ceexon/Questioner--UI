@@ -9,16 +9,14 @@ fetchMeetup = () => {
     .then(data => {
       if (data.status === 200) {
         let meetupData = data.data;
-        meetupData = meetupData.slice(0, 6)
+        meetupData = meetupData.slice(0, 6);
         for (meetId = 0; meetId < meetupData.length; meetId++) {
           currentMeetup = meetupData[meetId];
-          let meetupId = currentMeetup.id
+          let meetupId = currentMeetup.id;
           let imageUrl = currentMeetup.image[0];
           let topicText = currentMeetup.topic;
           let textDesc = currentMeetup.description.substr(0, 100) + "...";
-          let meetupsMainContainer = document.querySelector(
-            ".all-meetups-box"
-          );
+          let meetupsMainContainer = document.querySelector(".all-meetups-box");
           let meetupBox = document.createElement("div");
           meetupBox.classList.add("meetup-box-rep");
           meetupsMainContainer.appendChild(meetupBox);
@@ -53,34 +51,36 @@ fetchMeetup = () => {
           meetupsMainContainer.appendChild(readMoreLine);
           let meetupIdHidden = document.createElement("span");
           meetupIdHidden.classList.add("meetup-id");
-          meetupIdHidden.textContent = currentMeetup.id
+          meetupIdHidden.textContent = currentMeetup.id;
           meetupTextBox.appendChild(meetupIdHidden);
           meetupIdHidden.style.display = "none";
           // events to single created meetup
-          meetupBox.addEventListener("mouseover", (e) => {
-            e.preventDefault()
+          meetupBox.addEventListener("mouseover", e => {
+            e.preventDefault();
             meetupBox.style.cursor = "pointer";
             meetupBox.style.opacity = "0.7";
-          })
-          meetupBox.addEventListener("mouseout", (e) => {
-            e.preventDefault()
+          });
+          meetupBox.addEventListener("mouseout", e => {
+            e.preventDefault();
             meetupBox.style.opacity = "1";
-          })
-          meetupBox.addEventListener("click", (e) => {
-            e.preventDefault()
-            fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
-                method: "get",
-                header: {
-                  "Content-Type": "application/json"
+          });
+          meetupBox.addEventListener("click", e => {
+            e.preventDefault();
+            fetch(
+                `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
+                  method: "get",
+                  header: {
+                    "Content-Type": "application/json"
+                  }
                 }
-              })
+              )
               .then(response => response.json())
               .then(data => {
                 window.setTimeout(function () {
-                  location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`
+                  location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`;
                 }, 200);
-              })
-          })
+              });
+          });
         }
       }
     });

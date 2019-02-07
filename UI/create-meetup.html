@@ -25,17 +25,17 @@
     <div class="menu-bar">
       <div class="navbar-holder">
         <div class="main-nav-items">
-          <a href="index.html" class="main-nav-links sub-nav-links">Home</a>
+          <a href="index.html" class="main-nav-links sub-nav-links home-button">Home</a>
         </div>
         <div class="main-nav-items">
           <a href="meetupshome.html" class="main-nav-links sub-nav-links">Meetups</a>
         </div>
         <div class="main-nav-items">
-          <a href="admin-profile.html" class="main-nav-links sub-nav-links">Profile
+          <a href="admin-profile.html" class="main-nav-links sub-nav-links user-prof-link">Profile
           </a>
         </div>
         <div class="main-nav-items">
-          <a href="signin.html" class="main-nav-links sub-nav-links">Signout
+          <a href="signin.html" class="main-nav-links sub-nav-links sign-out-btn">Signout
           </a>
         </div>
       </div>
@@ -46,27 +46,42 @@
     <form action="#" class="create-meetup-form">
       <div class="field-boxes">
         <label for="title" class="meetup-title">Title: </label><br>
-        <input type="text" class="reg-input-fields" placeholder="Enter A Title For The Meetup" name="title">
+        <input type="text" class="reg-input-fields title required-field" placeholder="Enter A Title For The Meetup"
+          name="title">
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
         <label for="title" class="meetup-image-url">Image: </label><br>
-        <input type="text" class="reg-input-fields" placeholder="Enter Image Url" name="title">
+        <input type="text" class="reg-input-fields image" placeholder="Enter Image Url" name="title">
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
         <label for="title" class="meetup-tags">Tags (optional): </label><br>
-        <input type="text" class="reg-input-fields" placeholder="Enter Meetup Tags eg. #meetup1, #meetup2" name="title">
+        <input type="text" class="reg-input-fields tags" placeholder="Enter Meetup Tags eg. #meetup1, #meetup2" name="title">
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
         <label for="title" class="meetup-location">Location: </label><br>
-        <input type="text" class="reg-input-fields" placeholder="Enter Meetup Venue" name="title">
+        <input type="text" class="reg-input-fields venue required-field " placeholder="Enter Meetup Venue" name="title">
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
         <label for="title" class="meetup-time">Happen On: </label><br>
-        <input type="text" class="reg-input-fields" placeholder="Enter Meetup Happen Time (mm dd yy hr:min)" name="title">
+        <input type="text" class="reg-input-fields time required-field" placeholder="Enter Meetup Happen Time (mm dd yy hr:min)"
+          name="title">
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
         <label for="meetup-desc" class="meetup-desc">Description: </label><br>
-        <textarea name="meetup-desc" class="main-response-field meetup-desc" id="" cols="30" rows="5" placeholder="A little Description"></textarea>
+        <textarea name="meetup-desc" class="reg-input-fields main-response-field meetup-desc desc required-field" id=""
+          cols="30" rows="5" placeholder="A little Description"></textarea>
+        <br>
+        <span class="error"></span>
       </div>
       <div class="field-boxes">
         <input class="create-button" type="submit" value="Create Meetup" />
@@ -127,6 +142,8 @@
       </div>
     </div>
   </footer>
+  <script src="js/main.js"></script>
+  <script src="js/creaet-meetup.js"></script>
 </body>
 
 </html>

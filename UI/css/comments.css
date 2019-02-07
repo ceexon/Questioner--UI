@@ -1,3 +1,11 @@
+span.back-to-questions {
+  color: #204fb4;
+  display: block;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 1.5em;
+}
+
 section.questions-box {
   width: 100%;
   margin-left: 0;
@@ -139,9 +147,29 @@ span.hide-prof {
   display: none;
 }
 
+div.meetup-box-rep {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  flex-grow: 1;
+}
+
+p.meetup-text {
+  display: flex;
+  flex-basis: 60%;
+  padding: 50px 20px 50px 0;
+  text-align: justify;
+}
+
 section.edit-section {
   padding: 20px;
   width: 100%;
+}
+
+div.meetup-image-box {
+  flex-basis: 30%;
+  min-width: 280px;
 }
 
 label {
@@ -149,6 +177,26 @@ label {
   font-size: 1.3em;
 }
 
+@media screen and (max-width:1000px) {
+  p.meetup-text {
+    padding: 50px 20px;
+  }
+}
+
+@media screen and (max-width:850px) {
+  p.meetup-text {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width:800px) {
+  p.meetup-text {
+    margin: 0;
+    min-width: 100%;
+    padding: 20px;
+    overflow-x: visible;
+  }
+}
 
 @media screen and (max-width:650px) {
   div.user-comment {
@@ -170,5 +218,12 @@ label {
     position: fixed;
     z-index: 4;
     background-color: #fff;
+  }
+}
+
+@media screen and (max-width:550px) {
+
+  div.meetup-image-box {
+    padding: 0 10px;
   }
 }

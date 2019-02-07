@@ -1,50 +1,74 @@
 let addDays = (dateObj, numDays) => {
   dateObj.setDate(dateObj.getDate() + numDays);
   return dateObj;
-}
+};
 
-let monthNames = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+let monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "April",
+  "May",
+  "June",
+  "July",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec"
+];
 
 // today
 let today = new Date();
 let monthToday = monthNames[today.getMonth()];
-let dateToday = today.getDate()
-let yearToday = today.getFullYear()
+let dateToday = today.getDate();
+let yearToday = today.getFullYear();
 
 // next seven days
 let oneWeek = addDays(today, 7);
 let monthNextWeek = monthNames[today.getMonth()];
-let dateNextWeek = today.getDate()
-let yearNextWeek = today.getFullYear()
+let dateNextWeek = today.getDate();
+let yearNextWeek = today.getFullYear();
 
 // next 14 days
 let twoWeeks = addDays(today, 7);
 let monthTwoWeeks = monthNames[today.getMonth()];
-let dateTwoWeeks = today.getDate()
-let yearTwoWeeks = today.getFullYear()
+let dateTwoWeeks = today.getDate();
+let yearTwoWeeks = today.getFullYear();
 
 // next 21 days
 let threeWeeks = addDays(today, 7);
 let monthThreeWeeks = monthNames[today.getMonth()];
-let dateThreeWeeks = today.getDate()
-let yearThreeWeeks = today.getFullYear()
+let dateThreeWeeks = today.getDate();
+let yearThreeWeeks = today.getFullYear();
 
-let monthSet = [monthToday, monthNextWeek, monthTwoWeeks, monthThreeWeeks]
-let dateSet = [dateToday, dateNextWeek, dateTwoWeeks, dateThreeWeeks]
-let yearSet = [yearToday, yearNextWeek, yearTwoWeeks, yearThreeWeeks]
+let monthSet = [monthToday, monthNextWeek, monthTwoWeeks, monthThreeWeeks];
+let dateSet = [dateToday, dateNextWeek, dateTwoWeeks, dateThreeWeeks];
+let yearSet = [yearToday, yearNextWeek, yearTwoWeeks, yearThreeWeeks];
 
-document.getElementById("week-1").textContent = dateToday + ' ' + monthToday + ' ' + yearToday + ' - ' + dateNextWeek + ' ' + monthNextWeek + ' ' + yearNextWeek
+document.getElementById("week-1").textContent =
+  dateToday +
+  " " +
+  monthToday +
+  " " +
+  yearToday +
+  " - " +
+  dateNextWeek +
+  " " +
+  monthNextWeek +
+  " " +
+  yearNextWeek;
 
-let eventDateDiffs = document.querySelectorAll(".dates-between")
+let eventDateDiffs = document.querySelectorAll(".dates-between");
 eventDateDiffs.forEach((el, i) => {
-  let dateStart = dateSet[i] + ' ' + monthSet[i] + ' ' + yearSet[i] + ' - '
-  let dateFinish = ""
+  let dateStart = dateSet[i] + " " + monthSet[i] + " " + yearSet[i] + " - ";
+  let dateFinish = "";
   if (i < 2) {
-    dateFinish = dateSet[i + 1] + ' ' + monthSet[i + 1] + ' ' + yearSet[i + 1]
+    dateFinish = dateSet[i + 1] + " " + monthSet[i + 1] + " " + yearSet[i + 1];
   } else {
-    dateFinish = "later"
+    dateFinish = "later";
   }
-  el.textContent = dateStart + dateFinish
+  el.textContent = dateStart + dateFinish;
 });
 
 fetchMeetup = () => {
@@ -57,30 +81,30 @@ fetchMeetup = () => {
     .then(response => response.json())
     .then(data => {
       let allMeetups = data.data;
-      let meetupsMainContainer = ""
-      let oneWeekMeetups = []
-      let twoWeekMeetups = []
-      let threeWeekMeetups = []
+      let meetupsMainContainer = "";
+      let oneWeekMeetups = [];
+      let twoWeekMeetups = [];
+      let threeWeekMeetups = [];
       allMeetups.forEach((meetup, i) => {
-        let today = new Date()
-        let happenDate = new Date(meetup.happen_on)
-        let secondDifference = happenDate - today
-        let dayDifference = secondDifference / 8.64e+7
-        let meetupSections = document.querySelectorAll(".upcoming-events")
-        let meetupDivContainers = document.querySelectorAll(".all-meetups-box")
+        let today = new Date();
+        let happenDate = new Date(meetup.happen_on);
+        let secondDifference = happenDate - today;
+        let dayDifference = secondDifference / 8.64e7;
+        // let meetupSections = document.querySelectorAll(".upcoming-events");
+        let meetupDivContainers = document.querySelectorAll(".all-meetups-box");
         currentMeetup = meetup;
         let imageUrl = currentMeetup.image[0];
         let topicText = currentMeetup.topic;
         let textDesc = currentMeetup.description.substr(0, 100) + "...";
         if (dayDifference <= 7) {
-          meetupsMainContainer = meetupDivContainers[0]
-          oneWeekMeetups.push(currentMeetup)
+          meetupsMainContainer = meetupDivContainers[0];
+          oneWeekMeetups.push(currentMeetup);
         } else if (dayDifference > 7 && dayDifference <= 14) {
-          meetupsMainContainer = meetupDivContainers[1]
-          twoWeekMeetups.push(currentMeetup)
+          meetupsMainContainer = meetupDivContainers[1];
+          twoWeekMeetups.push(currentMeetup);
         } else if (dayDifference > 14) {
-          meetupsMainContainer = meetupDivContainers[2]
-          threeWeekMeetups.push(currentMeetup)
+          meetupsMainContainer = meetupDivContainers[2];
+          threeWeekMeetups.push(currentMeetup);
         }
 
         let meetupBox = document.createElement("div");
@@ -106,33 +130,35 @@ fetchMeetup = () => {
         meetupDescription.textContent = textDesc;
         let meetupIdHidden = document.createElement("span");
         meetupIdHidden.classList.add("meetup-id");
-        meetupIdHidden.textContent = meetup.id
+        meetupIdHidden.textContent = meetup.id;
         meetupTextBox.appendChild(meetupIdHidden);
         meetupIdHidden.style.display = "none";
 
         // events to single created meetup
-        meetupBox.addEventListener("mouseover", (e) => {
-          e.preventDefault()
+        meetupBox.addEventListener("mouseover", e => {
+          e.preventDefault();
           meetupBox.style.cursor = "pointer";
           meetupBox.style.opacity = "0.7";
-        })
-        meetupBox.addEventListener("mouseout", (e) => {
-          e.preventDefault()
+        });
+        meetupBox.addEventListener("mouseout", e => {
+          e.preventDefault();
           meetupBox.style.opacity = "1";
-        })
-        meetupBox.addEventListener("click", (e) => {
-          e.preventDefault()
-          let meetupId = meetup.id
-          fetch(`https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
-              method: "get",
-              header: {
-                "Content-Type": "application/json"
+        });
+        meetupBox.addEventListener("click", e => {
+          e.preventDefault();
+          let meetupId = meetup.id;
+          fetch(
+              `https://questioner--api.herokuapp.com/api/v2/meetups/${meetupId}`, {
+                method: "get",
+                header: {
+                  "Content-Type": "application/json"
+                }
               }
-            })
+            )
             .then(response => response.json())
             .then(data => {
               function ChangeUrl(page, url) {
-                if (typeof (history.pushState) != "undefined") {
+                if (typeof history.pushState != "undefined") {
                   var obj = {
                     Page: page,
                     Url: url
@@ -143,12 +169,12 @@ fetchMeetup = () => {
                 }
               }
               window.setTimeout(function () {
-                location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`
+                location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`;
               }, 200);
-            })
-        })
-      })
-    })
-}
+            });
+        });
+      });
+    });
+};
 
-fetchMeetup()
+fetchMeetup();
