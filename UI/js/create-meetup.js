@@ -5,7 +5,6 @@ let pageNotFound = () => {
     ("got it")
     let body = document.querySelector("body")
     body.innerHTML = "page not found"
-      (body)
   }
 }
 
@@ -72,7 +71,6 @@ let postMeetup = () => {
       } else {
         document.querySelector(".image").style.borderColor = "#3877ea"
         imageError.style.display = "none"
-          (imageError)
         document.querySelector(".image").addEventListener("blur", e => {
           document.querySelector(".image").style.borderColor = "#3877ea"
           imageError.style.display = "none"
@@ -92,10 +90,8 @@ let postMeetup = () => {
       }
     })
     if (tagsToPost.length === 0) {
-      (meetupTopic)
       tagsToPost = ["#" + meetupTopic.split(" ")[0]]
     }
-    (tagsToPost)
     fetch(`https://questioner--api.herokuapp.com/api/v2/meetups`, {
         headers: {
           "x-access-token": localStorage.token,

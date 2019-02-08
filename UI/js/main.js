@@ -1,5 +1,4 @@
 let createMeetupBtn = document.querySelector(".create-meetup-btn")
-  (createMeetupBtn)
 if (createMeetupBtn !== null) {
   createMeetupBtn.addEventListener("click", e => {
     e.preventDefault()
@@ -10,28 +9,24 @@ if (createMeetupBtn !== null) {
 }
 
 let profileLink = document.querySelector(".user-prof-link")
-  (profileLink)
 
 if (profileLink !== null) {
   profileLink.addEventListener("click", e => {
     e.preventDefault()
     if (localStorage.isAdmin === "true") {
       window.setTimeout(() => {
-          location.href = `https://kburudi.github.io/Questioner-UI/UI/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
-        })
-        ("profile")
+        location.href = `https://kburudi.github.io/Questioner-UI/UI/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
+      })
     } else {
       window.setTimeout(() => {
-          location.href = `https://kburudi.github.io/Questioner-UI/UI/user-profile.html?user&&user=${localStorage.currentUser}?`
-        })
-        ("non admin")
+        location.href = `https://kburudi.github.io/Questioner-UI/UI/user-profile.html?user&&user=${localStorage.currentUser}?`
+      })
     }
   })
 }
 
 let userSignout = () => {
   let signoutBtn = document.querySelector(".sign-out-btn")
-    (signoutBtn)
   if (signoutBtn !== null) {
     signoutBtn.addEventListener("click", e => {
       e.preventDefault()
@@ -66,6 +61,3 @@ if (localStorage.token !== "undefined") {
     homeButton.style.visibility = "visible"
   }
 }
-
-(history)
-(document.referrer)
