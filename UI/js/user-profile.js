@@ -76,7 +76,7 @@ let getUserInfo = () => {
         if (feedBox.childNodes.length === 3) {
           let questionFeeds = document.createElement("div")
           questionFeeds.classList.add("meetup-feeds")
-          questionFeeds.textContent = "You have Not rsvp'd YES to any upcoming meetup"
+          questionFeeds.textContent = "You have Not rsvp'd YES to any upcoming meetup or questions are yet to be posted to the meetup"
           feedBox.appendChild(questionFeeds)
         }
       }

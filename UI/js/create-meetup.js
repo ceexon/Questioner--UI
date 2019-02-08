@@ -54,6 +54,7 @@ let checkRequired = () => {
 let createBtn = document.querySelector(".create-button")
 checkRequired()
 
+
 let postMeetup = () => {
   createBtn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -78,7 +79,7 @@ let postMeetup = () => {
         imageToPost = [document.querySelector(".image").value]
       }
     } else {
-      imageToPost = ["/home/zonecc/Desktop/Questioner-UI/UI/images/meetups/meetup-2.jpg"]
+      imageToPost = ["images/meetups/meetup-2.jpg"]
     }
     let meetupTopic = document.querySelector(".title").value + " "
     tags.forEach(tag => {
@@ -121,6 +122,10 @@ let postMeetup = () => {
           window.setTimeout(function () {
             location.href = "https://kburudi.github.io/Questioner-UI/UI/meetupshome.html";
           }, 1500);
+        }
+        if (data.error === "invalid time format") {
+          let timeSpan = document.querySelector(".time")
+          timeSpan.nextSibling.nextSibling.textContent = "invalid time format"
         }
       })
   })

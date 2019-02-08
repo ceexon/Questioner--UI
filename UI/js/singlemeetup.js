@@ -88,6 +88,10 @@ let singleMeetupFetch = () => {
         let firstDateSection = happenTime.toDateString()
         let timeHours = happenTime.getHours().toString()
         let timeMinutes = happenTime.getMinutes().toString()
+        if (timeMinutes.length === 1) {
+          timeMinutes = timeMinutes + "0"
+          console.log(timeMinutes)
+        }
         let secondDateSection = timeHours + timeMinutes + "HRS"
         let displayTime = firstDateSection + " " + secondDateSection
         happenOnDate.textContent = displayTime;

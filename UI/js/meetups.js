@@ -90,7 +90,6 @@ fetchMeetup = () => {
         let happenDate = new Date(meetup.happen_on);
         let secondDifference = happenDate - today;
         let dayDifference = secondDifference / 8.64e7;
-        // let meetupSections = document.querySelectorAll(".upcoming-events");
         let meetupDivContainers = document.querySelectorAll(".all-meetups-box");
         currentMeetup = meetup;
         let imageUrl = currentMeetup.image[0];
