@@ -1,8 +1,24 @@
 let currentUrl = window.location.href
-console.log(currentUrl)
+console.log(localStorage.isAdmin)
+console.log(localStorage.currentUser)
+if (localStorage.isAdmin === "true") {
+  if (currentUrl.split("?")[1].split("=")[0] !== "admin&&super&&user") {
+    console.log(currentUrl.split("?")[1].split("=")[0])
+    document.querySelector("body").innerHTML = "page not found"
+  }
+} else if (localStorage.isAdmin === "false") {
+  if (currentUrl.split("?")[1].split("=")[0] !== "user&&user") {
+    console.log(currentUrl.split("?")[1].split("=")[0])
+    document.querySelector("body").innerHTML = "page not found"
+  }
+} else {
+  window.setTimeout(function () {
+    location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+  }, 0);
+}
+
 let userId = currentUrl.split("user=")[1].split("?")[0]
 userId = parseInt(userId)
-console.log(userId)
 
 let getUserInfo = () => {
   fetch(`https://questioner--api.herokuapp.com/api/v2/auth/user/info`, {
@@ -18,13 +34,11 @@ let getUserInfo = () => {
         let questionCount = data.questions
         document.querySelector(".q-count").textContent = questionCount
         let rsvpCount = data.rsvps
-        console.log(rsvpCount)
         let userImage = data.image
         document.querySelector(".username").textContent = data.username
         document.querySelector(".prof-image").setAttribute("src", userImage)
         let questions = data.topQuestions
         let feedBox = document.querySelector(".top-feeds")
-        console.log("rsvp count ==> ", rsvpCount)
         if (rsvpCount == 0) {
           let questionFeeds = document.createElement("div")
           questionFeeds.classList.add("meetup-feeds")
