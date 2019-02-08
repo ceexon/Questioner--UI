@@ -84,7 +84,7 @@ userLogin = () => {
           body.style.opacity = "0.7";
 
           window.setTimeout(function () {
-            if (document.referrer === "https://kburudi.github.io/Questioner-UI/UI/signup.html" || document.referrer === "https://kburudi.github.io/Questioner-UI/UI/index.html") {
+            if (document.referrer === "https://kburudi.github.io/Questioner-UI/UI/signup.html" || document.referrer === "https://kburudi.github.io/Questioner-UI/UI/index.html" || document.referrer === "https://kburudi.github.io/Questioner-UI/UI/signin.html") {
               location.href = "https://kburudi.github.io/Questioner-UI/UI/meetupshome.html";
             } else {
               history.back()

@@ -72,5 +72,3 @@ if (profileLink !== null) {
     })
   }
 }
-
-console.log(localStorage.token, localStorage.currentUser)
