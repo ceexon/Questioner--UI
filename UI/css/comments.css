@@ -67,12 +67,12 @@ div.username {
 
 div.user-info {
   display: flex;
-  justify-content: space-evenly;
   flex-grow: 1;
   flex-wrap: wrap;
 }
 
-p.circular {
+div.circular {
+  margin-left: 40px;
   width: 100px;
   height: 100px;
   border: 1px solid #d5d5d5;
@@ -84,7 +84,6 @@ p.circular {
   align-content: center;
   align-items: center;
   text-transform: capitalize;
-  font-size: 1.5em;
 
 }
 
@@ -95,6 +94,7 @@ span.space {
 
 div.top-feeds {
   width: 100%;
+  margin-top: 50px;
 }
 
 div.mini-metup-image-box {
@@ -119,7 +119,7 @@ div.meetup-feeds {
 h3.top-feeds-title {
   padding-left: 30px;
   text-decoration: underline;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
 }
 
 div.bottom-bar {
@@ -139,8 +139,8 @@ span.show-profile,
 span.hide-prof {
   color: #204fb4;
   font-size: 1.6em;
-  position: fixed;
-  top: 60px;
+  position: absolute;
+  top: 120px;
   left: 10px;
   z-index: 3;
   cursor: pointer;
@@ -226,4 +226,16 @@ label {
   div.meetup-image-box {
     padding: 0 10px;
   }
+}
+
+.user-counts {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: #204fb4;
+}
+
+h3.my-work {
+  text-align: justify;
+  padding-left: 40px;
 }
