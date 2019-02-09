@@ -84,3 +84,14 @@ let getUserInfo = () => {
 }
 
 getUserInfo()
+
+let toControls = document.querySelector(".control-room")
+console.log(toControls)
+if (toControls !== null) {
+  toControls.addEventListener("click", e => {
+    e.preventDefault()
+    window.setTimeout(() => {
+      location.href = `https://kburudi.github.io/Questioner-UI/UI/controls.html?control_panel`
+    })
+  })
+}

@@ -10,13 +10,11 @@
   <link rel="stylesheet" href="css/all.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/main-responsive.css" />
-  <link rel="stylesheet" href="css/signupin.css">
-  <link rel="stylesheet" href="css/meets-questions.css">
-  <link rel="stylesheet" href="css/comments.css">
+  <link rel="stylesheet" href="css/signupin.css" />
+  <link rel="stylesheet" href="css/meets-questions.css" />
 </head>
 
 <body>
-
   <header class="main-body-header" id="header">
     <div class="main-title">
       <a href="index.html" class="main-title-text">Questioner</a>
@@ -29,6 +27,7 @@
         <div class="main-nav-items">
           <a href="meetupshome.html" class="main-nav-links sub-nav-links">Meetups</a>
         </div>
+
         <div class="main-nav-items">
           <a href="user-profile.html" class="main-nav-links sub-nav-links user-prof-link">Profile
           </a>
@@ -41,84 +40,23 @@
     </div>
   </header>
 
-  <span class="show-profile fas fa-bars"></span>
-  <script>
-    document.addEventListener('DOMContentLoaded',
-  function () {
-    var showProf = document.querySelector('span.fas.fa-bars')
-    var profile = document.querySelector('section.profile-nav')
-    showProf.addEventListener('click', function (e) {
-      e.preventDefault()
-      profile.classList.remove("hide-from-prof")
-      profile.classList.add("show-on-prof")
-      this.style.display = "none"
-    })
+  <div class="controls-menu">
+    <div class="control-items" id="meetup-controls">Meetups</div>
+    <div class="control-items" id="user-controls">Users</div>
+  </div>
 
-    var hideProf = document.querySelector("span.fa-times")
-    hideProf.addEventListener('click', function (e) {
-      e.preventDefault()
-      profile.classList.add("hide-from-prof")
-      profile.classList.remove("show-on-prof")
-      showProf.style.display = "block"
-    })
+  <table class="data-table">
+    <tr class="th-row">
+      <th>ID</th>
+      <th>Topic</th>
+      <th>Location</th>
+      <th>happen on</th>
+      <th>Creator</th>
+      <th class="smallData">Edit</th>
+      <th class="smallData">Delete</th>
+    </tr>
+  </table>
 
-  })
-  </script>
-
-  <section class="profile-body">
-    <section class="profile-nav hide-from-prof">
-      <span class="fas fa-times hide-prof"></span>
-      <div class="username prof-div"></div>
-      <div class="user-image prof-div">
-        <img alt="profile image" class="prof-image">
-      </div>
-      <div class="profile-sub-nav prof-div">
-        <div class="prof-nav-item">
-          <a href="user-profile-reset.html" class="prof-nav-link"><span class="fas fa-pen"></span> edit profile</a>
-        </div>
-        <div class="prof-nav-item">
-          <a href="#stats" class="prof-nav-link"><span class="fas fa-chart-bar"></span> my stats</a>
-        </div>
-        <div class="prof-nav-item">
-          <a href="#tops" class="prof-nav-link"><span class="fas fa-star"></span> top feeds</a>
-        </div>
-        <div class="prof-nav-item">
-          <a href="create-meetup.html" class="prof-nav-link create-meetup-btn"><span class="fas fa-plus"></span>
-            create meetup</a>
-        </div>
-        <div class="prof-nav-item">
-          <a href="#" class="prof-nav-link control-room"><span class="fas fa-sync"></span>
-            control room</a>
-        </div>
-      </div>
-    </section>
-    <section class="user-info">
-      <h3 class="my-work user-counts" id="stats">My Posts</h3>
-      <div class="user-info">
-        <div class="user-stat-pie">
-          <div class="circular">
-            <div class="user-counts">My Questions</div>
-            </br>
-            <span class="q-count user-counts"></span>
-          </div>
-        </div>
-        <div class="user-stat-pie">
-          <div class="circular">
-            <div class="user-counts">My Comments</div>
-            </br>
-            <span class="com-count user-counts"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="top-feeds">
-        <h3 class="top-feeds-title" id="tops">
-          Upcoming Meetup Question Feeds
-        </h3>
-      </div>
-    </section>
-
-  </section>
 
   <footer class="main-footer">
     <div class="footer-left">
@@ -140,22 +78,22 @@
     <div class="footer-right">
       <div class="footer-breakdown socials">
         <div class="footer-links">
-          <a href="questions.html" class="read-more">
+          <a href="#" class="read-more">
             <span class="fas fa-envelope"> email</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="questions.html" class="read-more">
+          <a href="#" class="read-more">
             <span class="fab fa-facebook-f"> facebook</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="questions.html" class="read-more">
+          <a href="#" class="read-more">
             <span class="fab fa-instagram"> instagram</span>
           </a>
         </div>
         <div class="footer-links">
-          <a href="questions.html" class="read-more">
+          <a href="#" class="read-more">
             <span class="fab fa-twitter"> twitter</span>
           </a>
         </div>
@@ -174,7 +112,7 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
-  <script src="js/user-profile.js"></script>
+  <script src="js/controls.js"></script>
 </body>
 
 </html>

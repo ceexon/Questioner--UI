@@ -9,6 +9,7 @@ body {
   box-sizing: border-box;
   background-color: #ffffffff;
   overflow-x: hidden;
+  position: relative;
 }
 
 body,
@@ -198,6 +199,10 @@ footer.main-footer {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #3877ea;
   flex-grow: 1;
   flex-wrap: wrap;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 div.footer-left,
@@ -277,4 +282,144 @@ img.sp-image {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+
+.controls-menu {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.control-items {
+  flex-basis: 50%;
+  text-align: center;
+  cursor: pointer;
+  height: 100%;
+  background-color: #f6f6f6;
+  padding: 8px;
+}
+
+.control-items:hover {
+  background-color: #d3d8d3;
+}
+
+#meetup-controls {
+  border-right: 1px solid #606660;
+}
+
+table {
+  min-width: 630px;
+  overflow-x: scroll;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: justify;
+}
+
+th,
+td {
+  padding-left: 10px;
+  max-width: 150px;
+}
+
+.smallData {
+  color: #1e62b9;
+  width: 30px;
+}
+
+td.smallData:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: #d3d8d3;
+}
+
+.lightbox {
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  background-color: #60666099;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: none;
+}
+
+.meetupLightbox {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #ffffffee;
+  border: 1px solid #666666;
+  display: flex;
+}
+
+.meetup-form {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.data-fields {
+  width: 75%;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #999;
+}
+
+.key-label {
+  margin-right: 2%;
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+}
+
+.row-container {
+  padding: 0px 10px 10px 10px;
+}
+
+.change-not {
+  text-align: center;
+  padding: 8px;
+}
+
+.change-not a {
+  padding: 8px;
+  border: none;
+  outline: none;
+  margin-right: 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #d3d8d3;
+}
+
+.hideLightbox {
+  position: fixed;
+  top: 3px;
+  left: 15px;
+  color: #000;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.see-meetup {
+  color: #0036e6;
+  position: absolute;
+  left: 40%;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  margin-top: 2px;
 }
