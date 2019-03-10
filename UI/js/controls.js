@@ -176,7 +176,7 @@ let fetchAllMeetups = () => {
           })
           goToMeetup.addEventListener("click", e => {
             window.setTimeout(function () {
-              location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`;
+              location.href = `https://kburudi.github.io/Questioner--UI/UI/meetups.html?id=${meetupId}`;
             }, 200);
           })
 
@@ -204,7 +204,7 @@ function deleteMeetup(meetupId) {
         localStorage.token = undefined
         mainBody.innerHTML = "An error has occured.Login and start again"
         window.setTimeout(function () {
-          location.href = `https://kburudi.github.io/Questioner-UI/UI/signin.html`;
+          location.href = `https://kburudi.github.io/Questioner--UI/UI/signin.html`;
         }, 600);
       }
     })

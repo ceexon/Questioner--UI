@@ -3,7 +3,7 @@ if (createMeetupBtn !== null) {
   createMeetupBtn.addEventListener("click", e => {
     e.preventDefault()
     window.setTimeout(() => {
-      location.href = "https://kburudi.github.io/Questioner-UI/UI/create-meetup.html?admins%20%only"
+      location.href = "https://kburudi.github.io/Questioner--UI/UI/create-meetup.html?admins%20%only"
     })
   })
 }
@@ -27,7 +27,7 @@ let userSignout = () => {
             localStorage.token = undefined;
           }
           window.setTimeout(function () {
-            location.href = "https://kburudi.github.io/Questioner-UI/UI/index.html";
+            location.href = "https://kburudi.github.io/Questioner--UI/UI/index.html";
           }, 500);
         })
     })
@@ -54,7 +54,7 @@ if (profileLink !== null) {
     profileLink.addEventListener("click", e => {
       e.preventDefault()
       window.setTimeout(function () {
-        location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+        location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
       }, 500);
     })
   } else {
@@ -62,11 +62,11 @@ if (profileLink !== null) {
       e.preventDefault()
       if (localStorage.isAdmin === "true") {
         window.setTimeout(() => {
-          location.href = `https://kburudi.github.io/Questioner-UI/UI/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
+          location.href = `https://kburudi.github.io/Questioner--UI/UI/admin-profile.html?admin&&super&&user=${localStorage.currentUser}?`
         })
       } else {
         window.setTimeout(() => {
-          location.href = `https://kburudi.github.io/Questioner-UI/UI/user-profile.html?user&&user=${localStorage.currentUser}?`
+          location.href = `https://kburudi.github.io/Questioner--UI/UI/user-profile.html?user&&user=${localStorage.currentUser}?`
         })
       }
     })

@@ -113,14 +113,14 @@ let postMeetup = () => {
         if (data.status === 401) {
           if (data.error === "Token is invalid or expired" || data.error === "Token is missing") {
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
             }, 1000);
           }
         }
         if (data.status === 201) {
           document.querySelector(".create-meetup-form").reset()
           window.setTimeout(function () {
-            location.href = "https://kburudi.github.io/Questioner-UI/UI/meetupshome.html";
+            location.href = "https://kburudi.github.io/Questioner--UI/UI/meetupshome.html";
           }, 1500);
         }
         if (data.error === "invalid time format") {

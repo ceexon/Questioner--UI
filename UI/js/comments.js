@@ -159,7 +159,7 @@ function postComment() {
             document.querySelector(".add-new-question").appendChild(message)
             fadeIn(message)
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
             }, 1000);
           }
 

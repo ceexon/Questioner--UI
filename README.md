@@ -47,7 +47,7 @@ The questioner app is a web that allows users who are attendees of a meetup to b
 
 Hosting link
 ---
-[Questioner UI](https://kburudi.github.io/Questioner-UI/UI)
+[Questioner UI](https://kburudi.github.io/Questioner--UI/UI)
 
 
 # Teseting
@@ -60,7 +60,7 @@ Hosting link
     git clone https://github.com/kburudi/the-Questioner
 ```
 
-- cd into "Questioner-UI"
+- cd into "Questioner--UI"
 - open index.html on your browser
 - try all other links and navigations
 

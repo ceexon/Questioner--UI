@@ -156,7 +156,7 @@ let meetupRsvpFetch = () => {
             fadeIn(rsvpInfo);
             mainBody.appendChild(rsvpInfo);
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
             }, 1000);
           }
           yesCount.textContent = allRsvpCounts.YES;

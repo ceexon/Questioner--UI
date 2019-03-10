@@ -153,7 +153,7 @@ voteQuestion = () => {
             fadeIn(message);
             btn.parentNode.appendChild(message);
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
             }, 1000);
           }
         });
@@ -169,7 +169,7 @@ let goToComments = (meetup) => {
       let currentQuesId = parseInt(voteSpan.getAttribute("value").substr(4))
       e.preventDefault()
       window.setTimeout(function () {
-        location.href = `https://kburudi.github.io/Questioner-UI/UI/comments.html?meetup=${meetup}/question=${currentQuesId}/`;
+        location.href = `https://kburudi.github.io/Questioner--UI/UI/comments.html?meetup=${meetup}/question=${currentQuesId}/`;
       }, 300);
     })
   })
@@ -373,7 +373,7 @@ let postQuestion = () => {
       voteQuestion();
       if (data.status === 401 || data.error == "Token is invalid or expired") {
         window.setTimeout(function () {
-          location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+          location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
         }, 1000);
       }
     });

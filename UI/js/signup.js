@@ -86,7 +86,7 @@ let userSignUp = () => {
             body.appendChild(successMessage);
             ("here");
             window.setTimeout(function () {
-              location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+              location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
             }, 1000);
 
             requiredFields.forEach(element => {

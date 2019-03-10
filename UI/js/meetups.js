@@ -168,7 +168,7 @@ fetchMeetup = () => {
                 }
               }
               window.setTimeout(function () {
-                location.href = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${meetupId}`;
+                location.href = `https://kburudi.github.io/Questioner--UI/UI/meetups.html?id=${meetupId}`;
               }, 200);
             });
         });

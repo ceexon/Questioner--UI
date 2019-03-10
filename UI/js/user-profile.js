@@ -13,7 +13,7 @@ if (localStorage.isAdmin === "true") {
   }
 } else {
   window.setTimeout(function () {
-    location.href = "https://kburudi.github.io/Questioner-UI/UI/signin.html";
+    location.href = "https://kburudi.github.io/Questioner--UI/UI/signin.html";
   }, 0);
 }
 
@@ -63,7 +63,7 @@ let getUserInfo = () => {
             questionFeeds.appendChild(feedContainer)
             feedMeetup.appendChild(questionFeeds)
             feedBox.appendChild(feedMeetup)
-            let meetupUrl = `https://kburudi.github.io/Questioner-UI/UI/meetups.html?id=${question.meetup}`
+            let meetupUrl = `https://kburudi.github.io/Questioner--UI/UI/meetups.html?id=${question.meetup}`
             feedMeetup.setAttribute("href", meetupUrl)
             feedMeetup.addEventListener("mouseover", e => {
               questionFeeds.style.backgroundColor = "#f3f3f3"
@@ -91,7 +91,7 @@ if (toControls !== null) {
   toControls.addEventListener("click", e => {
     e.preventDefault()
     window.setTimeout(() => {
-      location.href = `https://kburudi.github.io/Questioner-UI/UI/controls.html?control_panel`
+      location.href = `https://kburudi.github.io/Questioner--UI/UI/controls.html?control_panel`
     })
   })
 }
